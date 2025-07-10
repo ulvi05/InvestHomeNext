@@ -1,23 +1,38 @@
-import { useState } from "react";
-import InvestHomeLogo from "../../assets/img/InvestHomeLogo.png";
+"use client";
+
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import InvestHomeLogo from "../../../assets/images/InvestHomeLogo.png";
 import { GoPlusCircle } from "react-icons/go";
-import { useTranslation } from "i18next";
-import { Link } from "react-router-dom";
+// import { useTranslation } from "i18next";
+import Link from "next/link";
 
 const Header = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const pathname = usePathname();
+  // const { t } = useTranslation();
 
-  const { t } = useTranslation();
+  const navLinks = [
+    { href: "/buy-sell", label: "Ev alqı-satqısı" },
+    { href: "/rent", label: "Kirayə"},
+    { href: "/about", label: "Haqqımızda" },
+    { href: "/services", label: "Xidmətlər" },
+    { href: "/blog", label: "Bloq" },
+    { href: "/become-agent", label: "Agent ol" },
+  ];
+
   return (
     <>
       <div className="max-w-full w-auto h-[80px] m-auto flex flex-row justify-between items-center px-[80px] max-[1185px]:flex-col max-[1185px]:pt-[20px] max-[1185px]:mb-[20px] max-[880px]:gap-[20px] max-[880px]:relative">
         <div className="w-auto h-full flex flex-row justify-center items-center gap-[48px] max-[1440px]:gap-[10px] max-[1185px]:self-start">
-          <Link to="/">
+          <Link href="/">
             <div className=" w-auto h-full flex flex-row justify-center items-center gap-[15px] max-[880px]:hidden">
-              <img
+              <Image
                 src={InvestHomeLogo}
                 alt="Invest Home Logo"
-                className="flex-shrink-0 w-[60px] h-[55px]"
+                width={60}
+                height={55}
+                priority
+                className="flex-shrink-0"
               />
               <p className="font-semibold text-xl mt-[8px] max-[1440px]:hidden">
                 İnvest Home
@@ -25,94 +40,30 @@ const Header = () => {
             </div>
           </Link>
           <div>
-            <ul className="flex flex-row items-center justify-around w-auto gap-[22px] text-base ">
-              <div className="h-full w-[129px] flex justify-center items-center">
-                <li
-                  key={0}
-                  onClick={() => setActiveIndex(0)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 0
-                      ? " h-[30px] w-[129px] text-center text-[#FF9D14] rounded-2xl flex justify-center items-center px-[5px]"
-                      : ""
-                  }`}
-                >
-                  {t("Ev alqı-satqısı")}
+            <ul className="flex flex-row items-center justify-around w-auto gap-[22px] text-base text-center">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`cursor-pointer transition-all px-3 py-1 rounded-2xl w-auto ${
+                      pathname === link.href ? "text-[#FF9D14]" : ""
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
                 </li>
-              </div>
-              <div className="h-full w-[65px] flex justify-center items-center">
-                <li
-                  key={1}
-                  onClick={() => setActiveIndex(1)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 1
-                      ? " h-[30px] w-[65px] text-[#FF9D14] rounded-2xl flex justify-center items-center px-[1px]"
-                      : ""
-                  }`}
-                >
-                  {t("Kirayə")}
-                </li>
-              </div>
-              <div className="h-full w-[114px] flex justify-center items-center">
-                <li
-                  key={2}
-                  onClick={() => setActiveIndex(2)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 2
-                      ? " h-[30px] w-[114px]  text-[#FF9D14] rounded-2xl flex justify-center items-center px-[5px]"
-                      : ""
-                  }`}
-                >
-                  {t("Haqqımızda")}
-                </li>
-              </div>
-              <div className="h-full w-[94px] flex justify-center items-center">
-                <li
-                  key={3}
-                  onClick={() => setActiveIndex(3)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 3
-                      ? " h-[30px] w-[94px]  text-[#FF9D14] rounded-2xl flex justify-center items-center px-[5px]"
-                      : ""
-                  }`}
-                >
-                  {t("Xidmətlər")}
-                </li>
-              </div>
-              <div className="h-full w-[50px] flex justify-center items-center">
-                <li
-                  key={4}
-                  onClick={() => setActiveIndex(4)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 4
-                      ? " h-[30px] w-[50px] text-[#FF9D14] rounded-2xl flex justify-center items-center px-[5px]"
-                      : ""
-                  }`}
-                >
-                  {t("Bloq")}
-                </li>
-              </div>
-              <div className="h-full w-[84px] flex justify-center items-center">
-                <li
-                  key={5}
-                  onClick={() => setActiveIndex(5)}
-                  className={`cursor-pointer transition-all ${
-                    activeIndex === 5
-                      ? " h-[30px] w-[84px] text-[#FF9D14] rounded-2xl flex justify-center items-center px-[5px]"
-                      : ""
-                  }`}
-                >
-                  {t("Agent ol")}
-                </li>
-              </div>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="h-full w-[320px] flex flex-row justify-between items-center max-[1185px]:self-end max-[880px]:w-auto">
-          <img
+          <Image
             src={InvestHomeLogo}
             alt="Invest Home Logo"
-            className="flex-shrink-0 w-[60px] h-[55px] min-[880px]:hidden max-[880px]:absolute max-[880px]:left-[80px]"
+            width={60}
+            height={55}
+            className="flex-shrink-0 min-[880px]:hidden max-[880px]:absolute max-[880px]:left-[80px]"
           />
           <div></div>
           <svg
@@ -129,7 +80,7 @@ const Header = () => {
               strokeWidth="1.6"
             />
           </svg>
-          <Link to="/login">
+          <Link href="/login">
             <button className="w-[156px] h-[50px] bg-white rounded-[50px] text-black flex flex-row justify-center items-center gap-[10px] text-[18px] cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,11 +108,13 @@ const Header = () => {
                   strokeWidth="1.6"
                 />
               </svg>
-              {t("Daxil ol")}
+              {/* {t("Daxil ol")} */}
+              Daxil ol
             </button>
           </Link>
           <button className="w-[156px] h-[50px] bg-[#FF9D14] rounded-[50px] text-white flex flex-row justify-center items-center gap-[16px] text-[18px] cursor-pointer">
-            <GoPlusCircle className="text-[20px]" /> {t("Elan ver")}
+            <GoPlusCircle className="text-[20px]" /> Elan ver
+             {/* {t("Elan ver")} */}
           </button>
         </div>
       </div>

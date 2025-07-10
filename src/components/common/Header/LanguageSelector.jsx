@@ -1,27 +1,32 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "i18next";
+import Image from "next/image";
+// import { useTranslation } from "i18next";
 import { IoIosArrowDown } from "react-icons/io";
-import AzFlag from "../../assets/img/AZ.svg";
-import EnFlag from "../../assets/img/US.svg";
-import RuFlag from "../../assets/img/RU.svg";
+import AzFlag from "../../../assets/icons/AZ.svg";
+import EnFlag from "../../../assets/icons/US.svg";
+import RuFlag from "../../../assets/icons/RU.svg";
+
 
 const LANG_KEY = "appSelectedLanguage";
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
+  // const { i18n } = useTranslation();
 
-  const storedLang = localStorage.getItem(LANG_KEY) || "AZ";
-
-  const [selectedLang, setSelectedLang] = useState(storedLang);
+  const [selectedLang, setSelectedLang] = useState("AZ");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    i18n.changeLanguage(selectedLang.toLowerCase());
-  }, []);
+    // This code now runs only on the client, where localStorage is available.
+    const storedLang = localStorage.getItem(LANG_KEY) || "AZ";
+    setSelectedLang(storedLang);
+    // i18n.changeLanguage(storedLang.toLowerCase());
+  }, []); // The empty dependency array ensures this runs only once on mount.
 
   const handleSelect = (lang) => {
     setSelectedLang(lang);
-    i18n.changeLanguage(lang.toLowerCase());
+    // i18n.changeLanguage(lang.toLowerCase());
     localStorage.setItem(LANG_KEY, lang);
     setIsOpen(false);
   };
@@ -39,10 +44,11 @@ const LanguageSelector = () => {
           onClick={() => setIsOpen(!isOpen)}
           className=" cursor-pointer flex flex-row items-center gap-[5px] text-[18px] text-white dark:text-[var(--main-color)] text-sm rounded-md px-3 py-1 focus:outline-none"
         >
-          <img
+          <Image
             src={flags[selectedLang]}
             alt={selectedLang}
-            className="w-5 h-5"
+            width={20}
+            height={20}
           />
           {selectedLang}
           <IoIosArrowDown
