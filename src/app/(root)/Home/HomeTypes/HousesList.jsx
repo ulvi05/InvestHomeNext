@@ -7,16 +7,16 @@ import HoverLabel from "./HoverLabel";
 
 // Import SVGs as React components if your setup supports it (e.g., with @svgr/webpack)
 // Otherwise, use the public folder for static assets and reference them by path
-const Imagesvg = "/assets/icons/image.svg";
-const PaintIcon = "/assets/icons/paint.svg";
-const ClipboardIcon = "/assets/icons/clipboard.svg";
-const MetroIcon = "/assets/images/metro.png";
-const SquareMetersIcon = "/assets/icons/Square Meters.svg";
-const ShareSvg = "/assets/icons/share.svg";
-const BedIcon = "/assets/icons/guidance_hotel-room.svg";
-const FloorIcon = "/assets/icons/ph_building-light.svg";
-const Manat = "/assets/icons/fa6-solid_manat-sign.svg";
-const VideoSvg = "/assets/icons/lets-icons_video-fill.svg";
+const Imagesvg = "/icons/image.svg";
+const PaintIcon = "/icons/paint.svg";
+const ClipboardIcon = "/icons/clipboard.svg";
+const MetroIcon = "/images/metro.png";
+const SquareMetersIcon = "/icons/Square Meters.svg";
+const ShareSvg = "/icons/share.svg";
+const BedIcon = "/icons/guidance_hotel-room.svg";
+const FloorIcon = "/icons/ph_building-light.svg";
+const Manat = "/icons/fa6-solid_manat-sign.svg";
+const VideoSvg = "/icons/lets-icons_video-fill.svg";
 
 const HousesList = ({ house, customWidth }) => {
   const [fav, setFav] = useState([]);
@@ -131,10 +131,13 @@ const HousesList = ({ house, customWidth }) => {
         <Slider {...sliderSettings} className="rounded-t-[0.5rem]">
           {house.images.map((imgSrc, index) => (
             <div className="outline-none" key={index}>
-              <img
+              <Image
                 src={imgSrc}
                 alt={`${house.title} image`}
+                width={272}
+                height={200}
                 className="w-full h-[200px] object-cover rounded-t-[0.5rem]"
+                priority={index === 0}
               />
             </div>
           ))}
@@ -161,13 +164,13 @@ const HousesList = ({ house, customWidth }) => {
         </div>
 
         <div className="absolute z-[10] top-[170px] left-[11px] px-[10px] py-[3px] rounded-[0.5rem] bg-[#fff] flex items-center gap-[3px] justify-center w-max">
-          <img src={MetroIcon} alt="Invest Home" className="w-[18px]" />
+          <Image src={MetroIcon} alt="Invest Home" width={18} height={18} className="w-[18px]" />
           <span className="text-[10px] font-[400] text-[#808080]">
             N.Nərimanov
           </span>
         </div>
         <div className="absolute z-[10] top-[182px] right-[11px] flex items-center gap-[4px]">
-          <img src={VideoSvg} alt="Invest Home" />
+          <Image src={VideoSvg} alt="Invest Home" width={18} height={18} />
           <span className="text-white text-[10px] font-medium leading-[15px]">
             1
           </span>
@@ -176,7 +179,7 @@ const HousesList = ({ house, customWidth }) => {
         <div className="px-[8px]">
           <div className="flex items-center justify-between py-[12px]">
             <p className="font-[500] text-[#111]">{house.title}</p>
-            <img src={ShareSvg} alt="Invest Home" />
+            <Image src={ShareSvg} alt="Invest Home" width={18} height={18} />
           </div>
 
           <div className="flex items-center gap-[6px] py-[3px]">
@@ -191,15 +194,15 @@ const HousesList = ({ house, customWidth }) => {
           <div className="text-[0.75rem] font-[300] text-[var(--text-color-6)] flex justify-between w-full py-[12px] leading-[16px]">
             <div className="flex justify-between w-[73%]">
               <div className="flex items-center gap-[6px]">
-                <img src={BedIcon} alt="Invest Home" />
+                <Image src={BedIcon} alt="Invest Home" width={18} height={18} />
                 <span>{house.beds} beds</span>
               </div>
               <div className="flex items-center gap-[6px]">
-                <img src={FloorIcon} alt="Invest Home" />
+                <Image src={FloorIcon} alt="Invest Home" width={18} height={18} />
                 <span>{house.floor}</span>
               </div>
               <div className="flex items-center gap-[6px]">
-                <img src={SquareMetersIcon} alt="Invest Home" />
+                <Image src={SquareMetersIcon} alt="Invest Home" width={18} height={18} />
                 <span>{house.field}</span>
               </div>
             </div>
@@ -215,14 +218,14 @@ const HousesList = ({ house, customWidth }) => {
 
         <div className="flex items-center justify-between px-[16px] pb-[16px] pt-[8px]">
           <div className="flex items-center gap-[0.5rem]">
-            <img src={Imagesvg} alt="Invest Home" />
+            <Image src={Imagesvg} alt="Invest Home" width={18} height={18} />
             <span className="text-[12px] text-[#111] font-[500]">
               Əli Bağırov
             </span>
           </div>
           <div className="font-[600] text-[24px] text-black gap-[6px] flex items-center  ">
             {house.price}
-            <img src={Manat} />
+            <Image src={Manat} alt="Manat" width={18} height={18} />
           </div>
         </div>
       </div>

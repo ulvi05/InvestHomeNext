@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
-import InvestHomeLogo from "../../../assets/images/InvestHomeLogo.png";
-import LocationBlack from "../../../assets/icons/locationBlack.svg";
-import PhoneBlack from "../../../assets/icons/phoneBlack.svg";
-import MailBlack from "../../../assets/icons/mailBlack.svg";
-import Arrow from "../../../assets/icons/Arrow 2.svg"
+import InvestHomeLogo from "../../../../public/images/InvestHomeLogo.png";
+import LocationBlack from "../../../../public/icons/locationBlack.svg";
+import PhoneBlack from "../../../../public/icons/phoneBlack.svg";
+import MailBlack from "../../../../public/icons/mailBlack.svg";
+import Arrow from "../../../../public/icons/Arrow 2.svg"
 
 
 const Footer = () => {

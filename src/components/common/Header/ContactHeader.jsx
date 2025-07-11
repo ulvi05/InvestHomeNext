@@ -1,9 +1,9 @@
 import Image from "next/image";
 import LanguageSelector from "./LanguageSelector";
 
-import LocationIcon from "../../../assets/icons/location.svg";
-import PhoneIcon from "../../../assets/icons/phone.svg";
-import MailIcon from "../../../assets/icons/mail.svg";
+import LocationIcon from "../../../../public/icons/location.svg";
+import PhoneIcon from "../../../../public/icons/phone.svg";
+import MailIcon from "../../../../public/icons/mail.svg";
 
 const ContactHeader = () => {
   return (

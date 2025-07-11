@@ -9,6 +9,10 @@ import Filter from "../../../components/ui/Filter";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
+import slider1 from "../../../../public/images/slider1.png";
+import slider2 from "../../../../public/images/slider2.png";
+import slider3 from "../../../../public/images/slider3.png";
+import slider4 from "../../../../public/images/slider4.png";
 
 
 const Slider = () => {
@@ -64,10 +68,10 @@ const Slider = () => {
           [&_.swiper-pagination-bullet-active]:!bg-[#3A0CA3]"
       >
         {[
-          "/src/assets/images/slider1.png",
-          "/src/assets/images/slider2.png",
-          "/src/assets/images/slider3.png",
-          "/src/assets/images/slider4.png",
+          slider1.src,
+          slider2.src,
+          slider3.src,
+          slider4.src,
         ].map((src, index) => (
           <SwiperSlide key={index} className="sw-slide overflow-hidden">
             <div
