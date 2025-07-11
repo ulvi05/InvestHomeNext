@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import InvestHomeLogo from "../../../assets/images/InvestHomeLogo.png";
+import InvestHomeLogo from "../../../../public/images/InvestHomeLogo.png";
 import { GoPlusCircle } from "react-icons/go";
 // import { useTranslation } from "i18next";
 import Link from "next/link";

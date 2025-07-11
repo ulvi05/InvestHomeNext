@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 // import { useTranslation } from "i18next";
 import { IoIosArrowDown } from "react-icons/io";
-import AzFlag from "../../../assets/icons/AZ.svg";
-import EnFlag from "../../../assets/icons/US.svg";
-import RuFlag from "../../../assets/icons/RU.svg";
+import AzFlag from "../../../../public/icons/AZ.svg";
+import EnFlag from "../../../../public/icons/US.svg";
+import RuFlag from "../../../../public/icons/RU.svg";
 
 
 const LANG_KEY = "appSelectedLanguage";
