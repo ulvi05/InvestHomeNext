@@ -4,7 +4,7 @@
 import { useEffect, useMemo, useState, useRef } from "react";
 import Slider from "react-slick";
 import { houseData } from "../../../../components/core/house";
-import HousesList from "./HousesList";
+import HousesList from "../../../../components/ui/HouseCard";
 import HouseTypeSelector from "./HouseTypeSelector";
 import Link from "next/link";
 // import { useTranslation } from "react-i18next";
@@ -53,7 +53,8 @@ const RecentHouses = () => {
                   key={house.id}
                   className={` ${!sliderMoved && index === 0 ? "" : ""}`}
                 >
-                  <HousesList house={house} />
+                  <HousesList house={house} 
+                  customWidth={272}/>
                   {/* <TypeOfHousesList house={house} /> */}
                 </div>
               ))}

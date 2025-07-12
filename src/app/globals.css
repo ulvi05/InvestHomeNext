@@ -20,6 +20,7 @@
     --color-neutral:#FAFAFA;
     --color-neutral-text:#E0F5F1;
     --color-neutral-disabled:#6C707A;
+    --color-azure:#212529;
     --font-primary: 'Poppins', sans-serif;
 }
 
@@ -38,4 +39,5 @@
 
 body{
     font-family: 'Poppins';
+    background-color: #FAFAFA;
 }

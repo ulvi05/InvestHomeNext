@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Button } from "./Button";
+import { Button } from "./HouseTypesButtons";
 import { FilterBtn } from "../core/Svg"; // Make sure this is a valid React component
 
 export default function Filter() {

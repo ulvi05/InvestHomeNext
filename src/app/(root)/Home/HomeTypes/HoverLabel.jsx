@@ -1,3 +1,6 @@
+"use client";
+
+
 import React, { useRef, useState } from "react";
 
 const HoverLabel = ({ iconSrc, label,bgColor }) => {

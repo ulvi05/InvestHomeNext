@@ -1,9 +1,14 @@
+"use client";
+
+
 import React, { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { LuHeart } from "react-icons/lu";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import HoverLabel from "./HoverLabel";
+import HoverLabel from "../../app/(root)/Home/HomeTypes/HoverLabel";
 
 // Import SVGs as React components if your setup supports it (e.g., with @svgr/webpack)
 // Otherwise, use the public folder for static assets and reference them by path
@@ -127,14 +132,15 @@ const HousesList = ({ house, customWidth }) => {
         }
       `}</style>
 
-      <div className="w-[272px] mt-[60px] mb-2 slider-container relative rounded-[0.5rem] shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.15)]">
+      <div className={` mb-2 slider-container relative rounded-[0.5rem] shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.15)]`}
+      style={{ width: customWidth }}>
         <Slider {...sliderSettings} className="rounded-t-[0.5rem]">
           {house.images.map((imgSrc, index) => (
             <div className="outline-none" key={index}>
               <Image
-                src={imgSrc}
+ src={imgSrc}
                 alt={`${house.title} image`}
-                width={272}
+                width={customWidth}
                 height={200}
                 className="w-full h-[200px] object-cover rounded-t-[0.5rem]"
                 priority={index === 0}
@@ -166,7 +172,7 @@ const HousesList = ({ house, customWidth }) => {
         <div className="absolute z-[10] top-[170px] left-[11px] px-[10px] py-[3px] rounded-[0.5rem] bg-[#fff] flex items-center gap-[3px] justify-center w-max">
           <Image src={MetroIcon} alt="Invest Home" width={18} height={18} className="w-[18px]" />
           <span className="text-[10px] font-[400] text-[#808080]">
-            N.Nərimanov
+ N.Nərimanov
           </span>
         </div>
         <div className="absolute z-[10] top-[182px] right-[11px] flex items-center gap-[4px]">
@@ -174,7 +180,7 @@ const HousesList = ({ house, customWidth }) => {
           <span className="text-white text-[10px] font-medium leading-[15px]">
             1
           </span>
-        </div>
+ </div>
 
         <div className="px-[8px]">
           <div className="flex items-center justify-between py-[12px]">
@@ -226,7 +232,7 @@ const HousesList = ({ house, customWidth }) => {
           <div className="font-[600] text-[24px] text-black gap-[6px] flex items-center  ">
             {house.price}
             <Image src={Manat} alt="Manat" width={18} height={18} />
-          </div>
+ </div>
         </div>
       </div>
     </>
