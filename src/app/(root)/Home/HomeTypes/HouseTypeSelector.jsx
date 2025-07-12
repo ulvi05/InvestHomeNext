@@ -25,7 +25,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
     "Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.";
 
   return (
-    <div className="flex px-[80px] m-auto justify-between items-center mb-6">
+    <div className="flex px-[80px] m-auto justify-between items-center mb-6 mb-[60px]">
       <div>
         <p className="text-[var(--text-color-2)] text-[2.1rem] font-[700] leading-[2.9rem] py-[1rem]">
           {headingText}

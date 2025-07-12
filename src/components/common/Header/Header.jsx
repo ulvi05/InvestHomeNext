@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="max-w-full w-auto h-[80px] m-auto flex flex-row justify-between items-center px-[80px] max-[1185px]:flex-col max-[1185px]:pt-[20px] max-[1185px]:mb-[20px] max-[880px]:gap-[20px] max-[880px]:relative">
+      <div className="max-w-full w-auto min-h-[80px] h-auto m-auto flex flex-row justify-between items-center px-[80px] max-[1185px]:flex-col max-[1185px]:pt-[20px] max-[1185px]:mb-[20px] max-[880px]:gap-[20px] max-[880px]:relative">
         <div className="w-auto h-full flex flex-row justify-center items-center gap-[48px] max-[1440px]:gap-[10px] max-[1185px]:self-start">
           <Link href="/">
             <div className=" w-auto h-full flex flex-row justify-center items-center gap-[15px] max-[880px]:hidden">

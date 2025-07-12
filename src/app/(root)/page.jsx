@@ -1,7 +1,13 @@
+import Agents from "./Home/Agents";
 import BeAgent from "./Home/BeAgent";
+import Blogs from "./Home/Blogs";
 import CenterMode from "./Home/CenterMode";
+import CustomerFeedbacks from "./Home/CustomerFeedbacks";
 import RecentHouses from "./Home/HomeTypes/RecentHouses";
+import Neighborhoods from "./Home/Neighborhoods";
+import Services from "./Home/Services";
 import { Slider } from "./Home/Slider";
+import WhoAreWe from "./Home/WhoAreWe";
 
 export default function Home() {
   return (
@@ -9,7 +15,13 @@ export default function Home() {
       <Slider />
       <CenterMode />
       <RecentHouses />
+      <Neighborhoods />
+      <Services />
       <BeAgent />
+      <WhoAreWe />
+      <Agents />
+      <Blogs />
+      <CustomerFeedbacks />
     </div>
   );
 }
