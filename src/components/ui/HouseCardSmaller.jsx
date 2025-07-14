@@ -222,10 +222,10 @@ const HousesList = ({ house, customWidth }) => {
 
         <hr className="w-[92%] mx-[11px] border-[0.05rem] border-[#E5E5E5]" />
 
-        <div className="flex items-center justify-between px-[16px] pb-[16px] pt-[8px]">
+        <div className="flex items-center justify-between px-[8.5px] pb-[13px] pt-[12px]">
           <div className="flex items-center gap-[0.5rem]">
-            <Image src={Imagesvg} alt="Invest Home" width={18} height={18} />
-            <span className="text-[12px] text-[#111] font-[500]">
+            <Image src={Imagesvg} alt="Invest Home" width={35} height={35} />
+            <span className="text-[14px] text-[#111] font-[500]">
               Əli Bağırov
             </span>
           </div>
