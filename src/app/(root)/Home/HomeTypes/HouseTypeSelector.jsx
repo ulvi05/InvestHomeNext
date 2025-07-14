@@ -25,19 +25,19 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
     "Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.";
 
   return (
-    <div className="flex px-[80px] m-auto justify-between items-center mb-6 mb-[60px]">
+    <div className="flex px-[80px] m-auto justify-between items-center mb-6 mb-[60px] max-[1024px]:px-[40px] max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
       <div>
         <p className="text-[var(--text-color-2)] text-[2.1rem] font-[700] leading-[2.9rem] py-[1rem]">
           {headingText}
         </p>
-        <p className="text-[var(--text-color-3)] font-[400] w-[31rem] leading-[1.6rem]">
+        <p className="text-[var(--text-color-3)] font-[400] w-[31rem] leading-[1.6rem] max-[768px]:w-full">
           {descriptionText}
         </p>
       </div>
       <div className="flex gap-4">
         <button
           onClick={() => setActiveType("enSon")}
-          className={`cursor-pointer flex items-center gap-[10px]  px-[24px] py-[12px] rounded-[6.25rem]  border border-[var(--primary-color)] transition-colors  duration-300 ease-in-out 
+          className={`w-[140px] cursor-pointer flex items-center just gap-[10px]  px-[24px] py-[12px] rounded-[6.25rem]  border border-[var(--primary-color)] transition-colors  duration-300 ease-in-out 
           ${
             activeType === "enSon"
               ? "bg-[var(--primary-color)] text-[var(--white)]"

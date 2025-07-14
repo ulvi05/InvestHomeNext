@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
-import InvestHomeLogo from "../../../../public/images/InvestHomeLogo.png";
+import InvestHomeLogo from "../../../../public/images/logo.png";
 import LocationBlack from "../../../../public/icons/locationBlack.svg";
 import PhoneBlack from "../../../../public/icons/phoneBlack.svg";
 import MailBlack from "../../../../public/icons/mailBlack.svg";
