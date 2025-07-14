@@ -17,12 +17,12 @@ const InfoDiv = ({ icon, header, text }) => {
 
 const WhoAreWe = () => {
   return (
-    <div className="max-w-[1280px] m-auto h-auto flex flex-row gap-[46px] items-center mb-[110px] relative max-[1260px]:flex-col max-[1260px]:px-[20px] max-[1260px]:mb-[60px]">
+    <div className="max-w-full w-auto px-[80px] m-auto h-auto flex flex-row justify-between items-center mb-[110px] relative max-[1260px]:flex-col max-[1260px]:px-[20px] max-[1260px]:mb-[60px]">
       <div className=" flex flex-col justify-between max-[1260px]:items-center max-[1260px]:text-center">
         <p className="text-primary text-[20px] font-[400] leading-[24px]">
           BİZ KİMİK ?
         </p>
-        <div className="w-[500px] max-[1260px]:w-full">
+        <div className="w-auto max-[1260px]:w-full">
           <h2 className="text-2 text-[34px] font-semibold mt-[20px]">
             Müvafiq daşınmaz əmlakın tapılmasında fiziki şəxslərə köməklik.
           </h2>
@@ -93,17 +93,19 @@ const WhoAreWe = () => {
           text="Təkliflərinizin daha geniş auditoriyaya çatması üçün fərdi yanaşma."
         />
       </div>
+      <div>
+        
+      </div>
       <Image 
-        className="w-[792px] h-[596px] max-[1260px]:w-full max-[1260px]:h-auto"
+        className=" max-[1260px]:w-full max-[1260px]:h-auto"
         src={Iphone15Pro}
         alt="Iphone 15 Pro"
-        width={792}
-        height={596} />
-      <div className="flex justify-center items-center p-4 absolute top-50 right-130 text-[16px] font-medium text-primary z-[-1] flex-shrink-0 max-[1260px]:top-150 max-[1260px]:right-190 max-[1160px]:right-170">
+        width={800}
+        height={551} />
+      <div className="flex justify-center items-center p-4 absolute top-35 right-130 text-[16px] font-medium text-primary z-[-1] flex-shrink-0 max-[1260px]:top-150 max-[1400px]:right-100 max-[1300px]:hidden">
         <svg
-          viewBox="0 0 400 300"
-          width="500"
-          height="500"
+          viewBox="0 0 400 300"                 
+          height="500"            
           transform="rotate(60, 200, 150)"
           className="text-gray-800"
         >

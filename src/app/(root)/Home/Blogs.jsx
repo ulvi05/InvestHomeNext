@@ -2,6 +2,22 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
+// const BlogCard = ({ image, title, description, day, weekday }) => {
+//   return (
+//     <div className="flex-shrink-0 w-1/3 h-[500px] flex flex-col relative">
+//       <div className="w-full h-[240px] rounded-[30px] relative overflow-hidden">
+//         <Image src={image} alt={title} layout="fill" objectFit="cover" className="rounded-[30px]" />
+//         <div className="absolute inset-0 bg-black opacity-30 rounded-[30px]" />
+//       </div>
+//       <div className="w-[45px] h-[50px] rounded-b-[10px] flex flex-col justify-center items-center bg-white shadow-[4px_4px_15px_0px_rgba(0,0,0,0.25)] absolute left-[50px]">
+//         <h4 className="text-[19.4px] font-medium">{day}</h4>
+//         <p className="text-[16px] leading-tight font-normal">{weekday}</p>
+//       </div>
+//       <h3 className="text-white text-[27.6px] font-medium mt-[30px]">{title}</h3>
+//       <p className="text-white text-[16px]/[26px] font-normal mt-[20px]">{description}</p>
+//     </div>
+//   );
+// };
 
 const BlogCard = ({ image, title, description, day, weekday }) => {
   return (
@@ -59,83 +75,106 @@ const BlogCard = ({ image, title, description, day, weekday }) => {
   );
 };
 
+const blogData = [
+  {
+    image: "/images/BlogPhoto1.jpg",
+    title: "Ev alarkən qaçınmaq üçün ən yaxşı 10 səhv",
+    description: "Etiam eget elementum elit. Aenean dignissim dapibus vestibulum",
+    day: "28",
+    weekday: "Ç.A"
+  },
+  {
+    image: "/images/BlogPhoto2.jpg",
+    title: "Tez Satış üçün Evinizi Necə Hazırlamaq olar",
+    description: "Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.",
+    day: "08",
+    weekday: "B.E"
+  },
+  {
+    image: "/images/BlogPhoto3.jpg",
+    title: "İlk dəfə ev satanlar üçün 5 məsləhət",
+    description: "In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.",
+    day: "26",
+    weekday: "C"
+  }
+];
+
 const Blogs = () => {
   const scrollRef = useRef(null);
-
+  const [scrollStep, setScrollStep] = useState(0);
   const [index, setIndex] = useState(0);
 
-  const CARD_WIDTH = 413;
-  const GAP = 20;
-  const TOTAL_WIDTH = CARD_WIDTH + GAP;
+  useEffect(() => {
+    const updateScrollStep = () => {
+      const container = scrollRef.current;
+      if (!container) return;
+
+      const card = container.querySelector('div');
+      if (card) {
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(container).gap || '0');
+        setScrollStep(cardWidth + gap);
+      }
+    };
+
+    updateScrollStep();
+    window.addEventListener('resize', updateScrollStep);
+    return () => window.removeEventListener('resize', updateScrollStep);
+  }, []);
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (!container) return;
+    if (!container || scrollStep === 0) return;
 
     const interval = setInterval(() => {
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
       let newIndex = index + 1;
+      const nextScroll = newIndex * scrollStep;
 
-      if (
-        newIndex * TOTAL_WIDTH >=
-        container.scrollWidth - container.clientWidth
-      ) {
+      if (nextScroll > maxScrollLeft) {
         newIndex = 0;
       }
 
       container.scrollTo({
-        left: newIndex * TOTAL_WIDTH,
-        behavior: "smooth",
+        left: newIndex * scrollStep,
+        behavior: 'smooth',
       });
 
       setIndex(newIndex);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index, TOTAL_WIDTH]);
+  }, [index, scrollStep]);
 
   return (
-    <div className="w-full h-[56.25em] bg-primary flex flex-col items-center pt-[140px] px-[80px] [background:linear-gradient(180deg,_#02836F_0%,_#001D19_100%)]">
+    <div className="w-full bg-primary flex flex-col items-center pt-[140px] px-[80px] [background:linear-gradient(180deg,_#02836F_0%,_#001D19_100%)]">
       <p className="text-white text-[19.4px] font-medium tracking-[2.91px] uppercase">
-        Trenddə nədİr ?
+        Trenddə nədir ?
       </p>
       <h2 className="text-white text-[39.8px]/[47px] font-semibold mt-[30px]">
         Ən son Bloqlar və Yazılar
       </h2>
-      <div className="w-[1280px] mt-[80px]">
-        <div className="w-full overflow-hidden">
-          <div
-            ref={scrollRef}
-            className="flex gap-[20px] overflow-x-hidden no-scrollbar scroll-smooth"
-          >
-            {/* Original + Duplicate */}
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="flex gap-[20px]">
-                <BlogCard
-                  image="/images/BlogPhoto1.jpg"
-                  title="Ev alarkən qaçınmaq üçün ən yaxşı 10 səhv"
-                  description="Etiam eget elementum elit. Aenean dignissim dapibus vestibulum"
-                  day="28"
-                  weekday="Ç.A"
-                />
-                <BlogCard
-                  image="/images/BlogPhoto2.jpg"
-                  title="Tez Satış üçün Evinizi Necə Hazırlamaq olar"
-                  description="Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc."
-                  day="08"
-                  weekday="B.E"
-                />
-                <BlogCard
-                  image="/images/BlogPhoto3.jpg"
-                  title="İlk dəfə ev satanlar üçün 5 məsləhət"
-                  description="In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus."
-                  day="26"
-                  weekday="C"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
+<div className="mt-[80px] w-full overflow-hidden flex justify-center">
+  <div
+    ref={scrollRef}
+    className="flex gap-[20px] overflow-x-hidden scroll-smooth no-scrollbar"
+    style={{ width: '1279px' }} // 3 * card width + 2 * gap
+  >
+    {[...Array(5)].flatMap((_, i) =>
+      blogData.map((data, index) => (
+        <BlogCard
+          key={`${i}-${index}`}
+          image={data.image}
+          title={data.title}
+          description={data.description}
+          day={data.day}
+          weekday={data.weekday}
+        />
+      ))
+    )}
+  </div>
+</div>
     </div>
   );
 };

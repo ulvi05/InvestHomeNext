@@ -15,7 +15,7 @@ export default function Agents() {
         </h2>
       </div>
 
-      <div className="h-auto flex flex-row justify-center items-center flex-wrap gap-[20px] mb-[120px]">
+      <div className="h-auto flex flex-row justify-between items-center flex-wrap  mb-[120px]">
         {agentsData.slice(0, 4).map((agent, index) => (
           <AgentCard
             key={agent.id}

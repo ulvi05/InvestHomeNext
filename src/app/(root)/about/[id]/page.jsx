@@ -7,7 +7,7 @@ import FacebookIcon from "../../../../../public/icons/facebook.svg"
 import XIcon from "../../../../../public/icons/XIcon.svg"
 import InstagramIcon from "../../../../../public/icons/Instagram.svg"
 import { houseData } from '@/components/core/house';
-import HouseCard from '@/components/ui/HouseCard';
+import HouseCard from '@/components/ui/HouseCardBigger';
 
 const Page = () => {
 
@@ -68,7 +68,7 @@ console.log(houseData)
           Əmlaklarım
         </p>
 
-        <div className='w-full h-auto flex flex-row items-center justify-center gap-x-6 gap-y-10 flex-wrap'>
+        <div className='w-full h-auto flex flex-row items-center justify-between gap-y-10 flex-wrap'>
           {houseData.map((house) => (
             <HouseCard
               key={house.id}

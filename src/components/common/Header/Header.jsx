@@ -22,8 +22,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="max-w-full w-auto min-h-[80px] h-auto m-auto flex flex-row justify-between items-center px-[80px] max-[1185px]:flex-col max-[1185px]:pt-[20px] max-[1185px]:mb-[20px] max-[880px]:gap-[20px] max-[880px]:relative">
-        <div className="w-auto h-full flex flex-row justify-center items-center gap-[48px] max-[1440px]:gap-[10px] max-[1185px]:self-start">
+      <div className="max-w-full w-auto min-h-[80px] h-auto m-auto bg-white flex flex-row justify-between items-center px-[80px] max-[1260px]:flex-col max-[1260px]:pt-[20px] max-[1260px]:mb-[20px] max-[880px]:gap-[20px] max-[880px]:relative">
+        <div className="w-auto h-full flex flex-row justify-center items-center gap-[48px] max-[1440px]:gap-[10px] max-[1260px]:self-start">
           <Link href="/">
             <div className=" w-auto h-full flex flex-row justify-center items-center gap-[15px] max-[880px]:hidden">
               <Image
@@ -57,7 +57,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="h-full w-[320px] flex flex-row justify-between items-center max-[1185px]:self-end max-[880px]:w-auto">
+        <div className="h-full w-[320px] flex flex-row justify-between items-center max-[1260px]:self-end max-[880px]:w-auto">
           <Image
             src={InvestHomeLogo}
             alt="Invest Home Logo"
@@ -81,7 +81,7 @@ const Header = () => {
             />
           </svg>
           <Link href="/login">
-            <button className="w-[156px] h-[50px] bg-white rounded-[50px] text-black flex flex-row justify-center items-center gap-[10px] text-[18px] cursor-pointer">
+            <button className="w-[156px] h-[50px] rounded-[50px] text-black flex flex-row justify-center items-center gap-[10px] text-[18px] cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

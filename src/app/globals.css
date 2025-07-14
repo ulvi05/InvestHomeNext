@@ -21,7 +21,6 @@
     --color-neutral-text:#E0F5F1;
     --color-neutral-disabled:#6C707A;
     --color-azure:#212529;
-    --font-primary: 'Poppins', sans-serif;
 }
 
 .remove-arrow input::-webkit-inner-spin-button,
@@ -29,6 +28,12 @@
   display: none;
 }
 
+@media (min-width: 1414px) and (max-width: 1450px) {
+    .mx-auto-1414-1450 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
 @media (prefers-color-scheme: dark) {
   :root {

@@ -2,7 +2,7 @@
 
 function Services() {
     return (
-        <section id="service" className="font-primary bg-text-6 py-20">
+        <section id="service" className="font-primary bg-text-6 py-20 max-w-full w-auto px-[80px]">
             <div className="flex flex-col items-center text-center gap-10">
                 <h4 className="text-primary text-[24px] leading-[28px] font-[400]">
                     XİDMƏTLƏRİMİZ
@@ -12,8 +12,8 @@ function Services() {
                 </h2>
             </div>
 
-            <div className="flex flex-nowrap justify-center gap-[20px] mt-[52px] overflow-x-hidden">
-                <ServiceCard title="Satılıq" iconType="default" />
+            <div className="flex flex-nowrap justify-between mt-[52px] overflow-x-hidden max-[1090px]:flex-col max-[1090px]:items-center max-[1090px]:gap-[30px]">
+                <ServiceCard title="Satılıq" iconType="default" /> {/* Changed iconType to default */}
                 <ServiceCard title="Kirayə" iconType="default" />
                 <ServiceCard title="Günlük" iconType="custom" />
             </div>
@@ -23,10 +23,10 @@ function Services() {
 
 function ServiceCard({ title, iconType }) {
     return (
-        <div className="border border-primary shadow rounded-[30px] flex flex-nowrap pl-[50px] w-[413px] h-[260px] items-center relative">
-            <div className="flex flex-wrap items-center w-[252px] h-[200px]">
-                <h6 className="text-[32px] font-[500]">{title}</h6>
-                <p className="text-3 text-[16px] leading-[26px] w-[252px]">
+        <div className="border border-primary shadow rounded-[30px] flex flex-nowrap pl-[50px] w-[413px] h-[260px] items-center relative max-[1090px]:w-full max-[1090px]:max-w-[413px] max-[1090px]:h-[220px] max-[1090px]:pl-[30px]">
+            <div className="flex flex-wrap items-center w-[252px] h-[200px] max-[1090px]:w-[calc(100%-100px)] max-[1090px]:h-auto">
+                <h6 className="text-[32px] font-[500] max-[1090px]:text-[28px]">{title}</h6>
+                <p className="text-3 text-[16px] leading-[26px] w-[252px] max-[1090px]:w-full max-[1090px]:text-[14px] max-[1090px]:leading-[22px]">
                     Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.
                 </p>
             </div>
@@ -37,7 +37,7 @@ function ServiceCard({ title, iconType }) {
                 height="150"
                 fill="none"
                 viewBox="0 0 150 150"
-                className="absolute top-0 right-[-15px]"
+                className="absolute top-0 right-[-15px] max-[1090px]:w-[120px] max-[1090px]:h-[120px] max-[1090px]:right-[-5px]"
             >
                 <g filter="url(#dropShadow)">
                     <circle
