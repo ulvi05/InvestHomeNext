@@ -1,6 +1,6 @@
-'use client';
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 // const BlogCard = ({ image, title, description, day, weekday }) => {
 //   return (
@@ -22,10 +22,14 @@ import { useEffect, useRef, useState } from 'react';
 const BlogCard = ({ image, title, description, day, weekday }) => {
   return (
     <div className="min-w-[413px] h-[500px] flex flex-col relative">
-      <div
-        className="w-full h-[240px] rounded-[30px] relative overflow-hidden"
-      >
-        <Image src={image} alt={title} layout="fill" objectFit="cover" className="rounded-[30px]" />
+      <div className="w-full h-[240px] rounded-[30px] relative overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+          className="rounded-[30px]"
+        />
         <div className="absolute inset-0 bg-black opacity-30 rounded-[30px]"></div>
       </div>
       <div className="w-[45px] h-[50px]  rounded-[0px_0px_10px_10px] flex flex-col justify-center items-center bg-white shadow-[4px_4px_15px_0px_rgba(0,0,0,0.25)] absolute left-[50px]">
@@ -79,24 +83,27 @@ const blogData = [
   {
     image: "/images/BlogPhoto1.jpg",
     title: "Ev alarkən qaçınmaq üçün ən yaxşı 10 səhv",
-    description: "Etiam eget elementum elit. Aenean dignissim dapibus vestibulum",
+    description:
+      "Etiam eget elementum elit. Aenean dignissim dapibus vestibulum",
     day: "28",
-    weekday: "Ç.A"
+    weekday: "Ç.A",
   },
   {
     image: "/images/BlogPhoto2.jpg",
     title: "Tez Satış üçün Evinizi Necə Hazırlamaq olar",
-    description: "Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.",
+    description:
+      "Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc.",
     day: "08",
-    weekday: "B.E"
+    weekday: "B.E",
   },
   {
     image: "/images/BlogPhoto3.jpg",
     title: "İlk dəfə ev satanlar üçün 5 məsləhət",
-    description: "In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.",
+    description:
+      "In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.",
     day: "26",
-    weekday: "C"
-  }
+    weekday: "C",
+  },
 ];
 
 const Blogs = () => {
@@ -109,17 +116,17 @@ const Blogs = () => {
       const container = scrollRef.current;
       if (!container) return;
 
-      const card = container.querySelector('div');
+      const card = container.querySelector("div");
       if (card) {
         const cardWidth = card.getBoundingClientRect().width;
-        const gap = parseFloat(getComputedStyle(container).gap || '0');
+        const gap = parseFloat(getComputedStyle(container).gap || "0");
         setScrollStep(cardWidth + gap);
       }
     };
 
     updateScrollStep();
-    window.addEventListener('resize', updateScrollStep);
-    return () => window.removeEventListener('resize', updateScrollStep);
+    window.addEventListener("resize", updateScrollStep);
+    return () => window.removeEventListener("resize", updateScrollStep);
   }, []);
 
   useEffect(() => {
@@ -137,7 +144,7 @@ const Blogs = () => {
 
       container.scrollTo({
         left: newIndex * scrollStep,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
 
       setIndex(newIndex);
@@ -155,26 +162,26 @@ const Blogs = () => {
         Ən son Bloqlar və Yazılar
       </h2>
 
-<div className="mt-[80px] w-full overflow-hidden flex justify-center">
-  <div
-    ref={scrollRef}
-    className="flex gap-[20px] overflow-x-hidden scroll-smooth no-scrollbar"
-    style={{ width: '1279px' }} // 3 * card width + 2 * gap
-  >
-    {[...Array(5)].flatMap((_, i) =>
-      blogData.map((data, index) => (
-        <BlogCard
-          key={`${i}-${index}`}
-          image={data.image}
-          title={data.title}
-          description={data.description}
-          day={data.day}
-          weekday={data.weekday}
-        />
-      ))
-    )}
-  </div>
-</div>
+      <div className="mt-[80px] w-full overflow-hidden flex justify-center">
+        <div
+          ref={scrollRef}
+          className="flex gap-[20px] overflow-x-hidden scroll-smooth no-scrollbar"
+          style={{ width: "1279px" }} // 3 * card width + 2 * gap
+        >
+          {[...Array(5)].flatMap((_, i) =>
+            blogData.map((data, index) => (
+              <BlogCard
+                key={`${i}-${index}`}
+                image={data.image}
+                title={data.title}
+                description={data.description}
+                day={data.day}
+                weekday={data.weekday}
+              />
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 };

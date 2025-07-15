@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image"; // Keep Image import for flags
-import ArrowDown from "../../../../public/icons/ArrowDown.svg"
+import ArrowDown from "../../../../public/icons/ArrowDown.svg";
 
 // Static imports of SVGs from /public (used as image paths, not components)
 import AzFlag from "../../../../public/icons/AZ.svg";
@@ -29,8 +29,8 @@ const LanguageSelector = () => {
   // Flag mapping
   const flags = {
     AZE: AzFlag,
-    EN: EnFlag,
-    RU: RuFlag,
+    ENG: EnFlag,
+    RUS: RuFlag,
   };
 
   const currentFlag = flags[selectedLang] || AzFlag; // fallback if key missing
@@ -63,7 +63,7 @@ const LanguageSelector = () => {
 
         {isOpen && (
           <ul className="absolute bg-white text-center right-0 mt-1 w-12 border border-gray-300 rounded-md shadow-lg z-40">
-            {["AZE", "EN", "RU"].map((lang) => (
+            {["AZE", "ENG", "RUS"].map((lang) => (
               <li
                 key={lang}
                 onClick={() => handleSelect(lang)}
