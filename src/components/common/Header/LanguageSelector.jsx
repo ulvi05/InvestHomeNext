@@ -1,39 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image"; // Keep Image import for flags
+import Image from "next/image";
 import ArrowDown from "../../../../public/icons/ArrowDown.svg";
-
-// Static imports of SVGs from /public (used as image paths, not components)
-import AzFlag from "../../../../public/icons/AZ.svg";
-import EnFlag from "../../../../public/icons/US.svg";
-import RuFlag from "../../../../public/icons/RU.svg";
-
-const LANG_KEY = "appSelectedLanguage";
+import { useLang } from "@/context/LangContext";
 
 const LanguageSelector = () => {
-  const [selectedLang, setSelectedLang] = useState("AZE");
+  const { selectedLang, handleSelect, currentFlag, flags } = useLang();
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const storedLang = localStorage.getItem(LANG_KEY) || "AZE";
-    setSelectedLang(storedLang);
-  }, []);
-
-  const handleSelect = (lang) => {
-    setSelectedLang(lang);
-    localStorage.setItem(LANG_KEY, lang);
-    setIsOpen(false);
-  };
-
-  // Flag mapping
-  const flags = {
-    AZE: AzFlag,
-    ENG: EnFlag,
-    RUS: RuFlag,
-  };
-
-  const currentFlag = flags[selectedLang] || AzFlag; // fallback if key missing
 
   return (
     <div className="flex flex-row items-center">
@@ -62,18 +36,19 @@ const LanguageSelector = () => {
         </button>
 
         {isOpen && (
-          <ul className="absolute bg-white text-center right-0 mt-1 w-12 border border-gray-300 rounded-md shadow-lg z-40">
-            {["AZE", "ENG", "RUS"].map((lang) => (
+          <ul className="absolute bg-white text-center right-0 mt-1 border border-gray-300 rounded-md shadow-lg z-40">
+            {flags.map((flag) => (
               <li
-                key={lang}
-                onClick={() => handleSelect(lang)}
+                key={flag.name}
+                onClick={() => handleSelect(flag.name)}
                 className={`${
-                  selectedLang === lang
+                  selectedLang === flag.name
                     ? "text-[var(--primary-color)]"
                     : "text-gray-400"
-                } px-3 py-1 rounded-md cursor-pointer`}
+                } px-3 py-1 rounded-md cursor-pointer hover:bg-[#f3f4f6]`}
               >
-                {lang}
+                
+                {flag.name}
               </li>
             ))}
           </ul>
