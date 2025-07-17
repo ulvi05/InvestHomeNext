@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import HoverLabel from "../../app/(root)/Home/HomeTypes/HoverLabel";
+import Link from "next/link";
 
 // Import SVGs as React components if your setup supports it (e.g., with @svgr/webpack)
 // Otherwise, use the public folder for static assets and reference them by path
@@ -28,7 +29,8 @@ const HousesList = ({ house, customWidth }) => {
 
   const isFavorite = fav.includes(house.id);
 
-  const handleFavToggle = () => {
+  const handleFavToggle = (e) => {
+     e.preventDefault();
     if (isFavorite) {
       setFav(fav.filter((favId) => favId !== house.id));
     } else {
@@ -131,7 +133,8 @@ const HousesList = ({ house, customWidth }) => {
           font-size: 20px;
         }
       `}</style>
-
+    <Link href={`/HouseDetail/${house.id}`}>
+    
       <div className={` mb-2 slider-container relative rounded-[0.5rem] shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.15)]`}
       style={{ width: customWidth }}>
         <Slider {...sliderSettings} className="rounded-t-[0.5rem]">
@@ -235,6 +238,7 @@ const HousesList = ({ house, customWidth }) => {
  </div>
         </div>
       </div>
+          </Link>
     </>
   );
 };

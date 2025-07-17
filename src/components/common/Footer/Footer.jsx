@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa6";
 import InvestHomeLogo from "../../../../public/images/logo.png";
 import LocationBlack from "../../../../public/icons/locationBlack.svg";
 import PhoneBlack from "../../../../public/icons/phoneBlack.svg";
 import MailBlack from "../../../../public/icons/mailBlack.svg";
 import Arrow from "../../../../public/icons/Arrow 2.svg"
+import FooterIcon from '../../ui/FooterIcon';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 
 const Footer = () => {
@@ -90,12 +92,24 @@ const Footer = () => {
             </button>
           </div>
 
-          <div>
+          <div className="flex items-center justify-between">
             <span className="text-[var(--text-color-1)] text-lg">Follow Us On</span>
-            <div className="flex items-center gap-4 mt-3 text-[var(--primary-color)]">
-              <a href="#" aria-label="LinkedIn"><FaLinkedinIn className="text-xl" /></a>
-              <a href="#" aria-label="Facebook"><FaFacebookF className="text-xl" /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram className="text-xl" /></a>
+            <div className='w-auto h-auto flex flex-row items-center justify-center gap-[20px]'>
+                <FooterIcon 
+                icon={
+                  <FaWhatsapp />
+                } 
+                backgroundColor="#28E55F"/>
+                <FooterIcon 
+                icon={
+                  <FaInstagram />
+                } 
+                backgroundColor="linear-gradient(to right, #8a3ab9, #e95950, #fccc63)"/>
+                <FooterIcon 
+                icon={
+                  <FaLinkedinIn />
+                } 
+                backgroundColor="#0073AF"/>
             </div>
           </div>
         </div>

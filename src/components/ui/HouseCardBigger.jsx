@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import HoverLabel from "../../app/(root)/Home/HomeTypes/HoverLabel";
+import Link from "next/link";
 
 // Import SVGs as React components if your setup supports it (e.g., with @svgr/webpack)
 // Otherwise, use the public folder for static assets and reference them by path
@@ -135,7 +136,9 @@ const HousesList = ({ house, customWidth }) => {
 
       {/* <div className={` mb-2 slider-container relative rounded-[0.5rem] shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.15)]`}
       style={{ width: customWidth }}> */}
+      
 <div className="mb-2 slider-container relative w-1/2 rounded-[0.5rem] shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.15)] w-[24%] max-[1250px]:w-[32%] max-[980px]:w-[48%] max-[700px]:w-[100%]">
+      <Link href={`/HouseDetail/${house.id}`} className="group">
 <div className="relative">
   <Slider {...sliderSettings} className="rounded-t-[0.5rem]">
     {house.images.map((imgSrc, index) => (
@@ -238,6 +241,7 @@ const HousesList = ({ house, customWidth }) => {
             <Image src={Manat} alt="Manat" width={18} height={18} />
  </div>
         </div>
+      </Link>
       </div>
     </>
   );
