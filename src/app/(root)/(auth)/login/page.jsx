@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { loginWithPhone } from "@/lib/authService";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import AuthLayout from "@/components/layout/AuthLayout";
+import AuthLayout from "@/app/(root)/(auth)/AuthLayout";
 
 const globalPhoneRegex = /^\+?[1-9]\d{7,14}$/;
 

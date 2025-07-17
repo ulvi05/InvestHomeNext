@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react';
 
-const RoundedBlackButton = ({ icon, backgroundColor }) => {
+const FooterIcon = ({ icon, backgroundColor }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const baseStyle = {
-    backgroundColor: 'black',
     ...(isHovered && backgroundColor
       ? backgroundColor.startsWith('linear-gradient')
         ? { backgroundImage: backgroundColor, backgroundColor: undefined }
@@ -16,7 +15,7 @@ const RoundedBlackButton = ({ icon, backgroundColor }) => {
 
   return (
     <button
-      className="w-8 h-8 px-[6px] py-[5px] flex items-center justify-center aspect-square cursor-pointer rounded-full text-white transition-all duration-200"
+      className="w-8 h-8 px-[6px] py-[5px] flex items-center justify-center aspect-square border border-solid border-primary cursor-pointer rounded-full text-primary transition-all duration-200 hover:text-white hover:border-none"
       style={baseStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -28,4 +27,4 @@ const RoundedBlackButton = ({ icon, backgroundColor }) => {
   );
 };
 
-export default RoundedBlackButton;
+export default FooterIcon;

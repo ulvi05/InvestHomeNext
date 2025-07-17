@@ -3,11 +3,11 @@ import Image from "next/image";
 import LawyerImage from "../../../../../public/images/Lawyer.png"
 import ConnectionButton from '../../../../components/ui/ConnectionButton';
 import RoundedBlackButton from '../../../../components/ui/RoundedBlackButton';
-import FacebookIcon from "../../../../../public/icons/facebook.svg"
-import XIcon from "../../../../../public/icons/XIcon.svg"
 import InstagramIcon from "../../../../../public/icons/Instagram.svg"
 import { houseData } from '@/components/core/house';
 import HouseCard from '@/components/ui/HouseCardBigger';
+import { FaWhatsapp } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Page = () => {
 
@@ -48,16 +48,19 @@ console.log(houseData)
             <div className='w-auto h-auto flex flex-row items-center justify-center gap-[20px]'>
                 <RoundedBlackButton 
                 icon={
-                 <Image src={FacebookIcon} alt="Facebook" width={20} height={20} />
-                } />
+                  <FaWhatsapp />
+                } 
+                backgroundColor="#28E55F"/>
                 <RoundedBlackButton 
                 icon={
-                 <Image src={XIcon} alt="Facebook" width={20} height={20} />
-                } />
+                 <Image src={InstagramIcon} alt="Instagram" width={18} height={18} />
+                } 
+                backgroundColor="linear-gradient(to right, #8a3ab9, #e95950, #fccc63)"/>
                 <RoundedBlackButton 
                 icon={
-                 <Image src={InstagramIcon} alt="Facebook" width={18} height={18} />
-                } />
+                  <FaLinkedinIn />
+                } 
+                backgroundColor="#0073AF"/>
             </div>
           </div>
         </div>

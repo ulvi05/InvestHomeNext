@@ -10,6 +10,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "axios": "^1.10.0",
     "i18next": "^25.3.1",
     "next": "15.3.5",
     "react": "^19.0.0",
@@ -17,6 +19,7 @@
     "react-hook-form": "^7.60.0",
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
+    "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10",
     "yup": "^1.6.1"
