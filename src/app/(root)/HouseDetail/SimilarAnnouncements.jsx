@@ -1,7 +1,5 @@
 import { houseData } from '@/components/core/house';
-import HouseCard from '@/components/ui/HouseCardBigger';
-
-
+import HouseCard from '@/components/ui/HouseCard';
 
 const SimilarAnnouncements = () => {
   return (
@@ -17,7 +15,6 @@ const SimilarAnnouncements = () => {
           <HouseCard
             key={house.id}
             house={house}
-            customWidth={302}
           />
         ))}
       </div>

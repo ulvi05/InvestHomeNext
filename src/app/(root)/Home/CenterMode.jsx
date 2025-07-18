@@ -92,36 +92,39 @@ function CenterMode() {
   };
 
   return (
-    <div className="w-full flex justify-start mb-10 md:mb-[63px] px-4 sm:px-8 md:pl-[84px] pt-8 md:pt-12">
-      <div className="relative w-full max-w-full md:max-w-[902px]">
-        <Slider {...settings} className="custom-slider h-auto">
-          {categories.map((cat) => {
-            const isActive = activeId === cat.id;
-            const Icon = cat.icon;
+    <>
+      <section className="max-[426px]:hidden">
+        <div className="w-full flex justify-start mb-10 md:mb-[63px] px-4 sm:px-8 md:pl-[84px] pt-8 md:pt-12">
+          <div className="relative w-full max-w-full md:max-w-[902px]">
+            <Slider {...settings} className="custom-slider h-auto">
+              {categories.map((cat) => {
+                const isActive = activeId === cat.id;
+                const Icon = cat.icon;
 
-            return (
-              <div key={cat.id} className="!w-auto px-[4px]">
-                <div
-                  onClick={() => setActiveId(cat.id)}
-                  className={`h-[40px] md:h-[46px] px-3 md:px-5 rounded-md border transition cursor-pointer group flex items-center justify-center
-                    ${
-                      isActive
-                        ? "bg-primary text-white border-primary"
-                        : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
-                    }
+                return (
+                  <div key={cat.id} className="!w-auto px-[4px]">
+                    <div
+                      onClick={() => setActiveId(cat.id)}
+                      className={`h-[40px] md:h-[46px] px-3 md:px-5 rounded-md border transition cursor-pointer group flex items-center justify-center
+                    ${isActive
+                          ? "bg-primary text-white border-primary"
+                          : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
+                        }
                   `}
-                >
-                  <Icon isActive={isActive} />
-                  <span className="font-[500] text-[12px] md:text-[14px] ml-2 whitespace-nowrap">
-                    {cat.label}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      </div>
-    </div>
+                    >
+                      <Icon isActive={isActive} />
+                      <span className="font-[500] text-[12px] md:text-[14px] ml-2 whitespace-nowrap">
+                        {cat.label}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

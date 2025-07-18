@@ -27,8 +27,8 @@ const Header = () => {
   return (
     <>
     <HamBar state={isOpen} setState={setOpen} />
-      <section className="bg-white max-[930px]:mb-[12px] max-[768px]:mb-0">
-        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[768px]:px-[40px] max-[425px]:px-[16px]">
+      <section className="max-[769px]:relative sticky z-998 top-0 bg-white max-[930px]:pb-[12px] max-[769px]:pb-0">
+        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[769px]:px-[40px] max-[426px]:px-[16px]">
           <div className="flex justify-between items-center py-[12px]">
             <div className="max-[930px]:w-[100%] h-full flex max-[930px]:justify-between justify-center items-center max-[1050px]:gap-[16px] max-[1000px]:gap-[8px] gap-[34px]">
               <Link className="" href="/">
@@ -39,7 +39,7 @@ const Header = () => {
                     width={60}
                     height={55}
                     priority
-                    className="max-[425px]:hidden flex-shrink-0"
+                    className="max-[426px]:hidden flex-shrink-0"
                   />
                   <Image
                     src={MobileInvestHomeLogo}
@@ -47,14 +47,14 @@ const Header = () => {
                     width={32}
                     height={32}
                     priority
-                    className="min-[425px]:hidden flex-shrink-0"
+                    className="min-[426px]:hidden flex-shrink-0"
                   />
-                  <p className="max-[1200px]:hidden max-[425px]:block max-[425px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
+                  <p className="max-[1200px]:hidden max-[426px]:block max-[426px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
                     İnvest Home
                   </p>
                 </div>
               </Link>
-              <div className="max-[768px]:hidden">
+              <div className="max-[769px]:hidden">
                 <ul className="flex">
                   {navLinks.map((link) => (
                     <li key={link.href}>
@@ -69,7 +69,7 @@ const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div onClick={()=>{setOpen(true)}} className="w-[24px] h-[24px] hidden max-[768px]:flex items-center justify-center">
+              <div onClick={()=>{setOpen(true)}} className="w-[24px] h-[24px] hidden max-[769px]:flex items-center justify-center">
                 <i className="text-[24px] fa-solid fa-bars"></i>
               </div>
             </div>
@@ -133,7 +133,7 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <div className=" max-[930px]:flex max-[768px]:hidden hidden gap-[24px] items-center justify-end">
+          <div className=" max-[930px]:flex max-[769px]:hidden hidden gap-[24px] items-center justify-end">
             <div className="cursor-pointer heart-icon">
               <svg
                 className=""

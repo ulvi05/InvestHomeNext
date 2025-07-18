@@ -7,20 +7,20 @@
 }
 
 @theme {
-    --color-primary:#02836F;
-    --primary-color:#02836F;
-    --white:#fff;
-    --text-color-1:#0B090A;
-    --text-color-2:#2B2B2B;
-    --text-color-3:#808080;
-    --text-color-4:#AAA;
-    --text-color-5:#D4D4D4;
-    --text-color-6:#23272F;
-    --yellow:#FFC700;
-    --color-neutral:#FAFAFA;
-    --color-neutral-text:#E0F5F1;
-    --color-neutral-disabled:#6C707A;
-    --color-azure:#212529;
+  --color-primary: #02836F;
+  --primary-color: #02836F;
+  --white: #fff;
+  --text-color-1: #0B090A;
+  --text-color-2: #2B2B2B;
+  --text-color-3: #808080;
+  --text-color-4: #AAA;
+  --text-color-5: #D4D4D4;
+  --text-color-6: #23272F;
+  --yellow: #FFC700;
+  --color-neutral: #FAFAFA;
+  --color-neutral-text: #E0F5F1;
+  --color-neutral-disabled: #6C707A;
+  --color-azure: #212529;
 }
 
 .remove-arrow input::-webkit-inner-spin-button,
@@ -29,11 +29,11 @@
 }
 
 @media (min-width: 1414px) and (max-width: 1450px) {
-    .mx-auto-1414-1450 {
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .mx-auto-1414-1450 {
+    margin-left: auto;
+    margin-right: auto;
   }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -42,7 +42,15 @@
   }
 }
 
-body{
-    font-family: 'Poppins';
-    background-color: #FAFAFA;
+body {
+  font-family: 'Poppins';
+  background-color: #FAFAFA;
+}
+
+.bullet-dot {
+  background-color: #ccc;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
 }

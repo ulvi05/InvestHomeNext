@@ -5,7 +5,7 @@ import ConnectionButton from '../../../../components/ui/ConnectionButton';
 import RoundedBlackButton from '../../../../components/ui/RoundedBlackButton';
 import InstagramIcon from "../../../../../public/icons/Instagram.svg"
 import { houseData } from '@/components/core/house';
-import HouseCard from '@/components/ui/HouseCardBigger';
+import HouseCard from '@/components/ui/HouseCard';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 
@@ -76,7 +76,6 @@ console.log(houseData)
             <HouseCard
               key={house.id}
               house={house}
-              customWidth={302}
             />
           ))}
         </div>
