@@ -58,7 +58,6 @@ const HouseTypePage = () => {
               <TypeHouseList
                 key={house.id}
                 house={house}
-                customWidth="w-[290px]"
               />
             ))
           ) : (

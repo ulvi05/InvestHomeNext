@@ -29,7 +29,7 @@ const Slider = () => {
         if (img) {
           img.style.transition = "transform 0.3s ease-out";
           img.style.transform = "translateX(-30px)";
-        }
+        } 
       });
 
       swiperInstance.on("slideChangeTransitionEnd", () => {
@@ -44,7 +44,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <section id="slider" className=" overflow-hidden">
+    <section id="slider" className="max-[426px]:hidden overflow-hidden">
       <Swiper
         ref={swiperRef}
         modules={[Pagination, Autoplay]}

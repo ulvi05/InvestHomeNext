@@ -8,7 +8,7 @@ import MailIcon from "../../../../public/icons/mail.svg";
 const ContactHeader = () => {
   return (
     <>
-      <section className="bg-primary max-[768px]:hidden">
+      <section className="bg-primary max-[769px]:hidden">
         <div className="max-w-[1600px] mx-auto">
           <div className="px-[80px]  h-10 m-auto text-[16px] text-white flex flex-row justify-between items-center">
             <div className="w-auto h-full flex flex-row items-center justify-start gap-[15px] flex-1 min-w-0 mr-[20px]">
