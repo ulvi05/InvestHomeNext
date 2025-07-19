@@ -3,7 +3,7 @@ import Agent from "../../../../public/images/beagent.png"
 
 function BeAgent() {
     return (
-        <section id="agent" className="max-w-full w-auto flex justify-center relative mt-[220px] mb-[120px] px-[80px] max-[1400px]:px-[20px] max-[1400px]:mt-[100px] max-[1400px]:mb-[100px]">
+        <section id="agent" className="max-w-[1600px] mx-[auto] w-auto flex justify-center relative mt-[220px] mb-[120px] px-[80px] max-[1400px]:px-[20px] max-[1400px]:mt-[100px] max-[1400px]:mb-[100px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="154" height="156" viewBox="0 0 154 156" fill="none" className="absolute top-[-70px] opacity-50 z-2 max-[1480px]:hidden">
                 <ellipse opacity="0.5" cx="77" cy="77" rx="77" ry="77" transform="matrix(0.862514 -0.506033 0.493991 0.869467 -27 50)" fill="url(#paint0_linear_792_24781)" />
                 <defs>

@@ -10,6 +10,7 @@ const AgentForm = () => {
     const accordionRefs = useRef([React.createRef(), React.createRef(), React.createRef()]);
     const [height, setHeights] = useState(["0px", "0px", "0px"])
     const [formIndex, setFormIndex] = useState(0);
+    const [visitedSections, setVisitedSections] = useState([true, false, false]);
 
     useEffect(() => {
         openAccordion(0);
@@ -23,8 +24,14 @@ const AgentForm = () => {
         } else if (action === "decrement" && index > 0) {
             index--;
         } else {
-            return; // prevent invalid range
+            return;
         }
+
+        setVisitedSections(prev => {
+            const updated = [...prev];
+            updated[index] = true;
+            return updated;
+        });
 
         setFormIndex(index);
         openAccordion(index);
@@ -69,8 +76,18 @@ const AgentForm = () => {
                             <div className="accordion">
                                 {/* accordion-head */}
                                 <div className='accordion-head flex gap-[6px]'>
-                                    <div className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex == 0 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'}`}></div>
-                                    <li className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] ${formIndex == 0 ? 'bg-[#02836F1A] text-[var(--primary-color)]' : 'shadow-[0px_4px_10px_rgba(217,217,217,0.32)] bg-[#fff] text-[#9CA3AF]'} rounded-[8px]`}>
+                                    <div
+                                        className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex >= 0 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'
+                                            }`}
+                                    />
+                                    <li
+                                        className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] rounded-[8px] ${formIndex === 0
+                                            ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                            : formIndex > 0
+                                                ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                                : 'bg-[#fff] text-[#9CA3AF] shadow-[0px_4px_10px_rgba(217,217,217,0.32)]'
+                                            }`}
+                                    >
                                         Şəxsi məlumatlar
                                     </li>
                                 </div>
@@ -104,9 +121,19 @@ const AgentForm = () => {
                             </div>
                             <div className="accordion">
                                 <div className='accordion-head flex gap-[6px]'>
-                                    <div className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex == 1 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'}`}></div>
-                                    <li className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] ${formIndex == 1 ? 'bg-[#02836F1A] text-[var(--primary-color)]' : 'shadow-[0px_4px_10px_rgba(217,217,217,0.32)] bg-[#fff] text-[#9CA3AF]'} rounded-[8px]`}>
-                                        Digər Məhsullar
+                                    <div
+                                        className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex >= 1 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'
+                                            }`}
+                                    />
+                                    <li
+                                        className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] rounded-[8px] ${formIndex === 1
+                                            ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                            : formIndex > 1
+                                                ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                                : 'bg-[#fff] text-[#9CA3AF] shadow-[0px_4px_10px_rgba(217,217,217,0.32)]'
+                                            }`}
+                                    >
+                                        Digər məlumatlar
                                     </li>
                                 </div>
                                 <div
@@ -138,8 +165,18 @@ const AgentForm = () => {
                             </div>
                             <div className="accordion">
                                 <div className=' accordion-head flex gap-[6px]'>
-                                    <div className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex == 2 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'}`}></div>
-                                    <li className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] ${formIndex == 2 ? 'bg-[#02836F1A] text-[var(--primary-color)]' : 'shadow-[0px_4px_10px_rgba(217,217,217,0.32)] bg-[#fff] text-[#9CA3AF]'} rounded-[8px]`}>
+                                    <div
+                                        className={`transition-colors duration-300 ease-in-out line rounded-[3px] w-[3px] ${formIndex >= 2 ? 'bg-[var(--primary-color)]' : 'bg-[#9CA3AF]'
+                                            }`}
+                                    />
+                                    <li
+                                        className={`transition-colors duration-300 ease-in-out w-[100%] font-[500] text-[14px] px-[20px] py-[16px] rounded-[8px] ${formIndex === 2
+                                            ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                            : formIndex > 2
+                                                ? 'bg-[#02836F1A] text-[var(--primary-color)]'
+                                                : 'bg-[#fff] text-[#9CA3AF] shadow-[0px_4px_10px_rgba(217,217,217,0.32)]'
+                                            }`}
+                                    >
                                         Ön Baxış
                                     </li>
                                 </div>

@@ -36,7 +36,7 @@ const LanguageSelector = () => {
         </button>
 
         {isOpen && (
-          <ul className="absolute bg-white text-center right-0 mt-1 border border-gray-300 rounded-md shadow-lg z-40">
+          <ul className="absolute z-999 bg-white text-center right-0 mt-1 border border-gray-300 rounded-md shadow-lg">
             {flags.map((flag) => (
               <li
                 key={flag.name}
