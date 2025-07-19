@@ -7,13 +7,19 @@ import MobileInvestHomeLogo from "../../../../public/images/logo.png";
 // import { useTranslation } from "i18next";
 import Link from "next/link";
 import HamBar from "./HamBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const pathname = usePathname();
   // const { t } = useTranslation();
 
   const [isOpen, setOpen] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 425);
+  }, []);
 
   const navLinks = [
     { href: "/buy-sell", label: "Ev Alqı-satqısı" },
@@ -26,7 +32,7 @@ const Header = () => {
 
   return (
     <>
-    <HamBar state={isOpen} setState={setOpen} />
+      <HamBar key={"hambar"} state={isOpen} setState={setOpen} />
       <section className="max-[769px]:relative sticky z-998 top-0 bg-white max-[930px]:pb-[12px] max-[769px]:pb-0">
         <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[769px]:px-[40px] max-[426px]:px-[16px]">
           <div className="flex justify-between items-center py-[12px]">
@@ -34,20 +40,12 @@ const Header = () => {
               <Link className="" href="/">
                 <div className="w-auto h-full flex justify-center items-center gap-[15px]">
                   <Image
-                    src={InvestHomeLogo}
+                    src={isMobile ? MobileInvestHomeLogo : InvestHomeLogo}
                     alt="Invest Home Logo"
                     width={60}
                     height={55}
                     priority
                     className="max-[426px]:hidden flex-shrink-0"
-                  />
-                  <Image
-                    src={MobileInvestHomeLogo}
-                    alt="Invest Home Logo"
-                    width={32}
-                    height={32}
-                    priority
-                    className="min-[426px]:hidden flex-shrink-0"
                   />
                   <p className="max-[1200px]:hidden max-[426px]:block max-[426px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
                     İnvest Home
@@ -69,7 +67,7 @@ const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div onClick={()=>{setOpen(true)}} className="w-[24px] h-[24px] hidden max-[769px]:flex items-center justify-center">
+              <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[769px]:flex items-center justify-center">
                 <i className="text-[24px] fa-solid fa-bars"></i>
               </div>
             </div>

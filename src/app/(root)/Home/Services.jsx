@@ -2,7 +2,7 @@
 
 function Services() {
     return (
-        <section id="service" className="font-primary bg-text-6 py-20 max-w-full w-auto px-[80px]">
+        <section id="service" className="max-w-[1600px] mx-auto font-primary bg-text-6 py-20 px-[80px]">
             <div className="flex flex-col items-center text-center gap-10">
                 <h4 className="text-primary text-[24px] leading-[28px] font-[400]">
                     XİDMƏTLƏRİMİZ

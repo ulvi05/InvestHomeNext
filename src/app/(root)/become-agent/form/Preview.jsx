@@ -9,7 +9,7 @@ const Preview = () => {
                         <div className='flex flex-col gap-[16px]'>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Ad/Soyad</label>
-                                <input placeholder='Full Name' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
+                                <input placeholder='Ad Soyad' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Email</label>
@@ -18,15 +18,15 @@ const Preview = () => {
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Telefon</label>
-                                <input placeholder='Full Name' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="phone" />
+                                <input placeholder='' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="phone" />
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Haqqınızda 1</label>
-                                <input placeholder='Full Name' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
+                                <input placeholder='İş Təcrübəniz' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Haqqınızda 2</label>
-                                <input placeholder='Full Name' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
+                                <input placeholder='İş Təcrübəniz' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
                             </div>
                         </div>
                     </form>
@@ -36,11 +36,11 @@ const Preview = () => {
                         <div className='flex flex-col gap-[16px]'>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Təhsil</label>
-                                <input placeholder='Full Name' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
+                                <input placeholder='Education' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Yaşınız</label>
-                                <input placeholder='28' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="number" />
+                                <input  placeholder='28' className='outline-none px-[14px] py-[10px] text-[14px] border-[1px] border-[black] rounded-[8px]' type="text" />
                             </div>
                             <div className='flex flex-col gap-[8px]'>
                                 <label htmlFor="">Yaşadığınız Ünvan</label>

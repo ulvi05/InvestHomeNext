@@ -5,7 +5,7 @@ import agentsData from '../../../components/core/AgentsData';
 
 export default function Agents() {
   return (
-    <section id="group" className="max-w-full w-auto flex flex-col gap-[70px] px-[80px]">
+    <section id="group" className="max-w-[1600px] mx-auto w-auto flex flex-col gap-[70px] px-[80px]">
       <div className="text-center flex flex-col gap-[15px]">
         <h5 className="text-primary text-[20px] font-medium tracking-[3px] uppercase">
           ÖZÜNÜZÜ TƏQDİM EDİN

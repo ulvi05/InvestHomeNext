@@ -93,7 +93,7 @@ function CenterMode() {
 
   return (
     <>
-      <section className="max-[426px]:hidden">
+      <section className="max-w-[1600px] mx-auto max-[426px]:hidden">
         <div className="w-full flex justify-start mb-10 md:mb-[63px] px-4 sm:px-8 md:pl-[84px] pt-8 md:pt-12">
           <div className="relative w-full max-w-full md:max-w-[902px]">
             <Slider {...settings} className="custom-slider h-auto">
