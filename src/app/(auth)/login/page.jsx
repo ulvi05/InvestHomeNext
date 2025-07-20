@@ -4,34 +4,27 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
-import { registerUser } from "@/lib/authService";
+import { loginWithPhone } from "@/lib/authService";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import AuthLayout from "@/components/layout/AuthLayout";
+import AuthLayout from "@/app/(auth)/AuthLayout";
+import Google from "../../../../public/icons/google.svg"
+import Phone from "../../../../public/icons/phone-auth.svg"
+import Link from "next/link";
 
 const globalPhoneRegex = /^\+?[1-9]\d{7,14}$/;
 
 const schema = yup.object({
-  fullName: yup
-    .string()
-    .required("Ad soyad vacibdir")
-    .test(
-      "two-words",
-      "Zəhmət olmasa həm ad, həm soyad daxil edin",
-      (v) => v && v.trim().split(" ").length >= 2
-    ),
   phone: yup
     .string()
     .required("Telefon nömrəsi vacibdir")
     .matches(globalPhoneRegex, "Telefon nömrəsi düzgün formatda deyil"),
-  terms: yup.boolean().oneOf([true], "Zəhmət olmasa şərtləri qəbul edin"),
 });
 
-const RegisterPage = () => {
+const LoginPage = () => {
   const {
     control,
     handleSubmit,
-    register,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
@@ -39,13 +32,13 @@ const RegisterPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      await registerUser({ fullName: data.fullName, phone: data.phone });
+      const result = await loginWithPhone(data.phone);
       localStorage.setItem("phone", data.phone);
-      localStorage.setItem("entranceType", "SIGNUP");
+      localStorage.setItem("entranceType", "LOGIN");
       router.replace("/otp");
     } catch (error) {
-      if (error.response?.status === 302) {
-        toast.info(error.response.data.message || "OTP artıq göndərilib");
+      if (error.response?.status === 404) {
+        toast.error(error.response.data.message || "İstifadəçi tapılmadı");
       } else {
         toast.error(error.response?.data?.message || "Xəta baş verdi");
       }
@@ -53,33 +46,17 @@ const RegisterPage = () => {
   };
 
   return (
-    <AuthLayout reverse>
+    <AuthLayout>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
-        <div className="flex flex-col items-center gap-4">
-          <h1 className="text-2xl font-medium text-1">Qeydiyyat</h1>
+        <div className="flex flex-col items-center gap-8 pb-8">
+          <h1 className="text-4xl font-medium text-1">Daxil ol</h1>
           <p className="text-lg text-1 text-center">
-            Yüzlərlə əmlak elanına baxmaq və öz evinizi elan etmək üçün hesab
-            yaradın.
+            "Invest Home – Gələcəyin evini bu gün seç, rahatlığını sabahdan
+            yaşa!"
           </p>
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="fullName" className="text-sm font-medium text-black">
-            Ad Soyad<span className="text-red-500">*</span>
-          </label>
-          <input
-            id="fullName"
-            type="text"
-            placeholder="Ad soyadınızı daxil edin"
-            {...register("fullName")}
-            className="border border-black p-2 rounded-md text-base"
-          />
-          <div className="h-[28px] text-sm text-red-500">
-            {errors.fullName?.message}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-1 mt-[4px]">
+        <div className="flex flex-col gap-1 mb-[28px]">
           <label htmlFor="phone" className="text-sm font-medium text-black">
             Telefon<span className="text-red-500">*</span>
           </label>
@@ -100,7 +77,7 @@ const RegisterPage = () => {
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
               <Image
-                src="/assets/img/phone-auth.svg"
+                src={Phone.src}
                 alt="phone"
                 width={20}
                 height={20}
@@ -108,40 +85,20 @@ const RegisterPage = () => {
             </span>
           </div>
           <div className="h-[28px] text-sm text-red-500">
-            {errors.phone?.message}
+            {errors.phone?.message && <span>{errors.phone.message}</span>}
           </div>
         </div>
 
-        <div className="flex flex-col gap-1 mt-[4px]">
-          <div className="flex items-center gap-2.5">
-            <input
-              id="terms"
-              type="checkbox"
-              {...register("terms")}
-              className="w-5 h-5 accent-primary cursor-pointer"
-            />
-            <label
-              htmlFor="terms"
-              className="text-base text-black cursor-pointer"
-            >
-              <span className="text-primary hover:text-green-800">
-                Şərtlər və qaydaları
-              </span>{" "}
-              oxudum, razıyam.
-            </label>
-          </div>
-          <div className="h-[28px] text-sm text-red-500">
-            {errors.terms?.message}
-          </div>
-        </div>
-
-        <div className="mt-[4px] flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
+          <Link href="../otp">
           <button
             type="submit"
             className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:opacity-90"
           >
-            Qeydiyyatdan keç
+            Daxil ol
           </button>
+          </Link>
+
 
           <div className="flex items-center justify-center gap-4">
             <span className="h-px w-full bg-[#866AB4]" />
@@ -151,10 +108,10 @@ const RegisterPage = () => {
 
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-primary text-[#1B1F27] py-3 rounded-lg hover:bg-green-50 cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 border border-primary text-[#1B1F27] py-3 rounded-lg hover:bg-green-50"
           >
             <Image
-              src="/assets/img/google.svg"
+              src={Google.src}
               alt="Google"
               width={20}
               height={20}
@@ -167,4 +124,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;

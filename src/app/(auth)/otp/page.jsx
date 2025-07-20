@@ -6,7 +6,7 @@ import { verifyOTP, resendOTP } from "@/lib/authService";
 import { toast } from "react-toastify";
 import { LoginSignupButtonWithHover } from "@/components/ui/LoginSignupButton";
 import Image from "next/image";
-import "@/assets/css/style.css";
+import InvestHomeLogo from "../../../../public/images/logo.png"
 
 const OTPPage = () => {
   const inputRefs = useRef([]);
@@ -101,7 +101,7 @@ const OTPPage = () => {
       <div className="flex flex-col items-center gap-[30px] px-[405px]">
         <div className="flex flex-col items-center">
           <Image
-            src="/login-invest-logo.jpg"
+            src={InvestHomeLogo}
             alt="Invest Home Logo"
             width={80}
             height={80}

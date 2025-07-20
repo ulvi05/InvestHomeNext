@@ -4,6 +4,7 @@ import { LoginSignupButtonWithHover } from "@/components/ui/LoginSignupButton";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import InvestHomeLogo from "../../../../public/images/logo.png"
 
 const AuthAside = () => {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ const AuthAside = () => {
         <div className="text-white flex flex-col gap-[52px] w-[466px] mt-[108px]">
           <div className="flex flex-col items-center gap-[12px]">
             <Image
-              src="/login-invest-logo.jpg"
+              src={InvestHomeLogo}
               width={100}
               height={100}
               className="rounded-full"
