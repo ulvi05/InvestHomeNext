@@ -135,12 +135,12 @@ const HouseCard = ({ house }) => {
                 <span className="text-[14px] font-[600]">{house.price}</span>
                 <Image src={Manat} alt="Manat" width={10} height={10} />
               </div>
-              <div className="name max-[769px]:hidden flex-shrink min-w-0 overflow-hidden">
+              <div className="name max-[769px]:hidden shrink min-w-0 overflow-hidden">
                 <h3 className="whitespace-nowrap font-[500] text-[16px] text-[#111111]">
                   {house.title}
                 </h3>
               </div>
-              <div className="flex-shrink-0 share cursor-pointer">
+              <div className="shrink-0 share cursor-pointer">
                 <Image src={ShareSvg} alt="Invest Home" width={20} height={20} />
               </div>
             </div>
@@ -150,7 +150,7 @@ const HouseCard = ({ house }) => {
                   <CiLocationOn />
                 </span>
               </div>
-              <div className="location max-[769px]:hidden flex-shrink min-w-0 overflow-hidden">
+              <div className="location max-[769px]:hidden shrink min-w-0 overflow-hidden">
                 <span className="font-[500] text-[var(--text-color-3)] text-[14px] whitespace-nowrap">{house.location}</span>
               </div>
               <div className="metro-icon hidden max-[769px]:block">
@@ -176,13 +176,13 @@ const HouseCard = ({ house }) => {
             </div>
           </div>
           <div className="max-[769px]:hidden px-[8px] py-[16px] flex justify-between gap-[8px]">
-            <div className="flex items-center gap-[8px] flex-shrink min-w-0 overflow-hidden">
+            <div className="flex items-center gap-[8px] shrink min-w-0 overflow-hidden">
               <Image className="max-[1024px]:hidden" src={Imagesvg} alt="Invest Home" width={35} height={35} />
               <span className="whitespace-nowrap text-[14px] text-[#111] font-[500]">
                 Əli Bağırov
               </span>
             </div>
-            <div className="flex items-center gap-[5px] flex-shrink min-w-0 overflow-hidden">
+            <div className="flex items-center gap-[5px] shrink min-w-0 overflow-hidden">
               <span className="text-[24px] font-[600] max-[1200]:text-[18px]">{house.price}</span>
               <Image src={Manat} alt="Manat" width={18} height={18} />
             </div>

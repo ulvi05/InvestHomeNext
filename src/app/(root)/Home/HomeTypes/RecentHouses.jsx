@@ -54,7 +54,7 @@ const RecentHouses = () => {
         activeType={activeType}
         setActiveType={setActiveType}
       />
-      <section className='max-w-[1600px] mx-auto max-[769px]:px-[40px] max-[426px]:px-[16px] px-[80px]'>
+      <section className='max-w-[1600px] mx-auto max-[1025px]:px-[40px] max-[426px]:px-[16px] px-[80px]'>
         <div className="py-8 flex flex-col overflow-hidden">
           <div>
             <Swiper
