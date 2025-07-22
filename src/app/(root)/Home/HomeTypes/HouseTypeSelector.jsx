@@ -26,7 +26,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
 
   return (
     <>
-      <section className="max-[426px]:hidden max-w-[1600px] mx-auto max-[769px]:px-[40px] max-[426px]:px-[16px] px-[80px]">
+      <section className="max-[426px]:hidden max-w-[1600px] mx-auto max-[1025px]:px-[40px] max-[426px]:px-[16px] px-[80px]">
         <div className="flex m-auto justify-between items-center max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
           <div>
             <p className="text-[var(--text-color-2)] text-[2.1rem] font-[700] leading-[2.9rem] py-[1rem]">

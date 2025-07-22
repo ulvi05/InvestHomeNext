@@ -3,7 +3,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   All,
   Building,
@@ -16,12 +16,16 @@ import {
   Sale,
   Store,
 } from "../../../components/core/Svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css";
 
-function SampleNextArrow({ onClick }) {
+export const SampleNextArrow = ({ swiperRef }) => {
   return (
-    <div
-      className="absolute top-1/2 -translate-y-1/2 right-[-20px] md:right-[-30px] z-10 cursor-pointer"
-      onClick={onClick}
+    <button
+      className="cursor-pointer" onClick={() => swiperRef.current?.slideNext()}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,15 +41,14 @@ function SampleNextArrow({ onClick }) {
           fill="#02836F"
         />
       </svg>
-    </div>
+    </button>
   );
 }
 
-function SamplePrevArrow({ onClick }) {
+export const SamplePrevArrow = ({ swiperRef }) => {
   return (
-    <div
-      className="absolute top-1/2 -translate-y-1/2 left-[-20px] md:left-[-30px] z-10 cursor-pointer"
-      onClick={onClick}
+    <button
+      className="cursor-pointer" onClick={() => swiperRef.current?.slidePrev()}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +64,7 @@ function SamplePrevArrow({ onClick }) {
           fill="#02836F"
         />
       </svg>
-    </div>
+    </button>
   );
 }
 
@@ -80,6 +83,7 @@ const categories = [
 
 function CenterMode() {
   const [activeId, setActiveId] = useState(1);
+  const swiperRef = useRef(null);
 
   const settings = {
     className: "center-btns",
@@ -93,34 +97,42 @@ function CenterMode() {
 
   return (
     <>
-      <section className="max-w-[1600px] mx-auto max-[426px]:hidden">
-        <div className="w-full flex justify-start mb-10 md:mb-[63px] px-4 sm:px-8 md:pl-[84px] pt-8 md:pt-12">
-          <div className="relative w-full max-w-full md:max-w-[902px]">
-            <Slider {...settings} className="custom-slider h-auto">
+      <section className="max-w-[1600px] mx-auto max-[426px]:hidden px-[80px] max-[1024]:px-[40px] max-[426]:px-[16px]">
+        <div className="w-full flex justify-start mb-10 md:mb-[63px] mt-8 md:mt-12">
+          <div className="flex gap-[12px] items-center relative w-full max-w-full md:max-w-[902px]">
+            <SamplePrevArrow swiperRef={swiperRef} />
+            <Swiper
+              loop={false}
+              slidesPerView="auto"
+              speed={500}
+              spaceBetween={8}
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+            >
               {categories.map((cat) => {
                 const isActive = activeId === cat.id;
                 const Icon = cat.icon;
 
                 return (
-                  <div key={cat.id} className="!w-auto px-[4px]">
+                  <SwiperSlide key={cat.id} className="!w-auto">
                     <div
                       onClick={() => setActiveId(cat.id)}
-                      className={`h-[40px] md:h-[46px] px-3 md:px-5 rounded-md border transition cursor-pointer group flex items-center justify-center
-                    ${isActive
+                      className={`border border-[#FAFAFA] rounded-[8px] py-[11px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
+            ${isActive
                           ? "bg-primary text-white border-primary"
                           : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
                         }
-                  `}
+          `}
                     >
                       <Icon isActive={isActive} />
-                      <span className="font-[500] text-[12px] md:text-[14px] ml-2 whitespace-nowrap">
+                      <span className="font-[500] text-[12px] md:text-[14px] whitespace-nowrap">
                         {cat.label}
                       </span>
                     </div>
-                  </div>
+                  </SwiperSlide>
                 );
               })}
-            </Slider>
+            </Swiper>
+            <SampleNextArrow swiperRef={swiperRef} />
           </div>
         </div>
       </section>

@@ -44,7 +44,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <section id="slider" className=" max-[426px]:hidden overflow-hidden">
+    <section id="slider" className=" max-[580px]:hidden overflow-hidden">
       <Swiper
         ref={swiperRef}
         modules={[Pagination, Autoplay]}
@@ -65,8 +65,8 @@ const Slider = () => {
           [&_.swiper-pagination-bullet]:transition-all
           [&_.swiper-pagination-bullet]:duration-1500
           [&_.swiper-pagination-bullet]:ease-linear
-          [&_.swiper-pagination-bullet-active]:!bg-white
-          max-xl:h-[300px] max-lg:h-[250px] max-md:h-[200px] max-sm:h-[150px]"
+          [&_.swiper-pagination-bullet-active]:!bg-[#3A0CA3]
+          max-xl:h-[350px]"
       >
         {[
           slider1.src,
@@ -77,7 +77,7 @@ const Slider = () => {
           <SwiperSlide key={index} className="sw-slide overflow-hidden ">
             <div
               style={{
-                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.14) 9.13%, rgba(32, 32, 32, 0.70) 100%), url(${src})`, // Removed !important
+                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.14) 9.13%, rgba(32, 32, 32, 0.70) 100%), url(${src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -85,17 +85,17 @@ const Slider = () => {
             ></div>
           </SwiperSlide>
         ))}
-        <div className="w-full absolute top-[24px] left-[0px] z-10 text-white">
-          <div className="mx-auto max-w-[1600px] max-[769px]:px-[40px] px-[80px]">
-            <h5 className="font-medium text-[24px] tracking-[3.6px] max-xl:text-[20px] max-lg:text-[16px] max-md:text-[14px] max-sm:text-[12px] max-sm:tracking-[2px]">
+        <div className="w-full absolute top-[68px] left-[0px] z-10 text-white">
+          <div className="mx-auto max-w-[1600px] max-[1025px]:px-[40px] px-[80px]">
+            <h5 className="">
               {/* <Trans i18nKey="slider.title" /> */}
             </h5>
-            <h6 className="font-semibold text-[32px] leading-[34px] max-xl:text-[28px] max-xl:leading-[30px] max-lg:text-[24px] max-lg:leading-[26px] max-md:text-[20px] max-md:leading-[22px] max-sm:text-[16px] max-sm:leading-[18px]">
+            <h1 className="text-[32px] font-[600] leading-[1.2]">
               {/* <Trans i18nKey="slider.subtitle"> */}
               Sevdiyiniz mükəmməl bir ev <br /> tapın..!
               {/* </Trans> */}
-            </h6>
-            <p className="text-[16px] leading-[26px] max-xl:text-[14px] max-xl:leading-[22px] max-lg:text-[12px] max-lg:leading-[20px] max-md:text-[10px] max-md:leading-[18px] max-sm:text-[8px] max-sm:leading-[14px]">
+            </h1>
+            <p className="text-[16px] font-[400] leading-[1.7]">
               {/* <Trans i18nKey="slider.description"> */}
               Bizimlə birlikdə, rahat və təhlükəsiz əməliyyatlar <br /> üçün
               etibarlı tərəfdaş əldə edirsiniz.
@@ -103,7 +103,7 @@ const Slider = () => {
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 max-xl:w-[80%] max-lg:w-[90%] max-md:w-[95%] max-sm:w-[98%]">
+        <div className="w-[100%] absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
           <Filter />
         </div>
       </Swiper>
