@@ -10,7 +10,7 @@ export default function Filter() {
 
   return (
     <>
-      <div className="max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[40px] max-[426px]:px-[16px] flex flex-col items-center">
+      <div className="max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] flex flex-col items-center">
         <div>
           <Button onSelect={(val) => setSelectedType(val)} />
         </div>

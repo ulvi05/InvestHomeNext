@@ -6,10 +6,10 @@ const Neighborhoods = () => {
   return (
     <>
       <>
-        <section className="max-w-[1600px] mx-auto">
-          <div className="max-w-full w-auto px-[80px] max-[1115px]:px-[20px]">
+        <section className="mt-[48px] max-w-[1600px] mx-auto">
+          <div className="max-w-full w-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
             {/* Changed background color to transparent and adjusted padding for better responsiveness */}
-            <div className=" pb-[10rem] flex flex-col items-center gap-[60px] bg-transparent max-[769px]:pb-[5rem]">
+            <div className="flex flex-col gap-[60px] bg-transparent max-[769px]:pb-[5rem]">
               <div className="text-center flex flex-col gap-[10px] ">
                 <h4 className="text-[var(--primary-color)] text-[1.5rem] font-400">
                   {/* {t("Şəhərə böyük sahələr")} */}
@@ -20,9 +20,8 @@ const Neighborhoods = () => {
                   Qonşuluq Əmlakları
                 </h2>
               </div>
-              <div className=" flex flex-row flex-wrap justify-between items-center gap-y-[60px]">
-                {/* 1st image */}
-                <div className="group relative w-[411px] h-[300px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in max-[1365px]:w-[calc(50%-30px)] max-[800px]:w-full max-[769px]:rounded-[15px]">
+              <div className="select-none max-[769px]:max-h-none max-h-[660px] grid grid-rows-2 grid-cols-12 max-[426px]:gap-[16px] gap-[20px]">
+                <div className="max-[426px]:col-span-12 max-[769px]:col-span-5 max-[769px]:h-[150px] max-[425px]:h-[90px] col-span-4 group relative max-[769px]:rounded-[9px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in">
                   <Image
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
                     width={411}
@@ -31,18 +30,19 @@ const Neighborhoods = () => {
                     alt="Mardakan Invest Home"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]"></div>
-                  <div className="absolute bottom-4 left-8 font-[500]">
-                    <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[3.6rem]">
-                      216
-                    </h4>
-                    <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[1.25rem]">
-                      Mardakan, Baku
-                    </p>
+                  <div className="w-full absolute bottom-0 left-0 font-[500]">
+                    <div className="p-4 max-[426px]:p-0 max-[426px]:px-3 max-[426px]:flex flex-row-reverse justify-between items-center">
+                      <h1 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[58px] max-[769px]:text-[30px]">
+                        216
+                      </h1>
+                      <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[20px] max-[769px]:text-[16px]">
+                        Mardakan, Baku
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* 2nd image */}
-                <div className="group relative w-[414px] h-[300px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in max-[1365px]:w-[calc(50%-30px)] max-[800px]:w-full max-[769px]:rounded-[15px]">
+                <div className="max-[426px]:col-span-12 max-[769px]:col-span-7 max-[769px]:h-[150px] max-[425px]:h-[90px] col-span-4 group relative max-[769px]:rounded-[9px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in">
                   <Image
                     className="w-full h-full object-cover scale-125 group-hover:scale-135 transition-transform duration-300 ease-in-out"
                     fill
@@ -50,18 +50,19 @@ const Neighborhoods = () => {
                     alt="Melissa Invest Home"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]"></div>
-                  <div className="absolute bottom-4 left-6 sm:left-8 font-[500]">
-                    <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[2.5rem] sm:text-[3rem] md:text-[3.6rem]">
-                      141
-                    </h4>
-                    <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[1rem] sm:text-[1.125rem] md:text-[1.25rem]">
-                      Melissa Park
-                    </p>
+                  <div className="w-full absolute bottom-0 left-0 font-[500]">
+                    <div className="p-4 max-[426px]:p-0 max-[426px]:px-3 max-[426px]:flex flex-row-reverse justify-between items-center">
+                      <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[58px] max-[769px]:text-[30px]">
+                        141
+                      </h4>
+                      <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[20px] max-[769px]:text-[16px]">
+                        Melissa Park
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* 3rd image */}
-                <div className="group relative w-[413px] h-[300px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in max-[1365px]:w-[calc(50%-30px)] max-[800px]:w-full max-[769px]:rounded-[15px]">
+                <div className="max-[426px]:col-span-12 max-[769px]:col-span-7 max-[769px]:h-[150px] max-[425px]:h-[90px] col-span-4 group relative max-[769px]:rounded-[9px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in">
                   <Image
                     className="w-full h-full object-cover scale-125 group-hover:scale-135 transition-transform duration-300 ease-in-out"
                     width={413}
@@ -70,18 +71,19 @@ const Neighborhoods = () => {
                     alt="Buzovna Invest Home"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]"></div>
-                  <div className="absolute bottom-4 left-8 font-[500]">
-                    <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[3.6rem]">
-                      212
-                    </h4>
-                    <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[1.25rem]">
-                      Buzovna, Baku
-                    </p>
+                  <div className="w-full absolute bottom-0 left-0 font-[500]">
+                    <div className="p-4 max-[426px]:p-0 max-[426px]:px-3 max-[426px]:flex flex-row-reverse justify-between items-center">
+                      <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[58px] max-[769px]:text-[30px]">
+                        212
+                      </h4>
+                      <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[20px] max-[769px]:text-[16px]">
+                        Buzovna, Baku
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* 4th image */}
-                <div className="group relative w-[521px] h-[300px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in  max-[1435px]:w-[calc(50%-30px)]  max-[800px]:w-full max-[769px]:rounded-[15px] mx-auto-1414-1450">
+                <div className="max-[426px]:col-span-12 max-[769px]:col-span-5 max-[769px]:h-[150px] max-[425px]:h-[90px] col-span-5 group relative max-[769px]:rounded-[9px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in">
                   <Image
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
                     width={521}
@@ -90,18 +92,19 @@ const Neighborhoods = () => {
                     alt="Masazir Invest Home"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]"></div>
-                  <div className="absolute bottom-4 left-8 font-[500]">
-                    <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[3.6rem]">
-                      183
-                    </h4>
-                    <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[1.25rem]">
-                      Masazır, Baku
-                    </p>
+                  <div className="absolute bottom-0 left-0 w-full font-[500]">
+                    <div className="p-4 max-[426px]:p-0 max-[426px]:px-3 max-[426px]:flex flex-row-reverse justify-between items-center">
+                      <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[58px] max-[769px]:text-[30px]">
+                        183
+                      </h4>
+                      <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[20px] max-[769px]:text-[16px]">
+                        Masazır, Baku
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* 5th image */}
-                <div className="group relative w-[738px] h-[300px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in max-[1365px]:w-[calc(50%-30px)] max-[1435px]:mx-auto max-[800px]:w-full">
+                <div className="max-[426px]:col-span-12 max-[769px]:col-span-12 max-[769px]:h-[150px] max-[425px]:h-[90px] col-span-7 group relative max-[769px]:rounded-[9px] rounded-[30px] overflow-hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)] text-white transition-all duration-400 ease-in">
                   <Image
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
                     width={738}
@@ -110,13 +113,15 @@ const Neighborhoods = () => {
                     alt="Seabreeze Invest Home"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_100%)]"></div>
-                  <div className="absolute bottom-4 left-8 font-[500]">
-                    <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[3.6rem]">
-                      112
-                    </h4>
-                    <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[1.25rem]">
-                      Sea Breeze
-                    </p>
+                  <div className="w-full absolute bottom-0 left-0 font-[500]">
+                    <div className="p-4 max-[426px]:p-0 max-[426px]:px-3 max-[426px]:flex flex-row-reverse justify-between items-center">
+                      <h4 className="opacity-60 group-hover:opacity-90 group-hover:text-[var(--yellow)] text-[58px] max-[769px]:text-[30px]">
+                        112
+                      </h4>
+                      <p className="opacity-60 group-hover:opacity-90 group-hover:text-white text-[20px] max-[769px]:text-[16px]">
+                        Sea Breeze
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

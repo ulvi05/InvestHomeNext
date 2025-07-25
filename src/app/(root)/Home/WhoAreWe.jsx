@@ -18,8 +18,8 @@ const InfoDiv = ({ icon, header, text }) => {
 const WhoAreWe = () => {
   return (
     <>
-      <section className="max-w-[1600px] mx-auto">
-        <div className="max-w-full w-auto px-[80px] m-auto h-auto flex flex-row justify-between items-center mb-[110px] relative max-[1260px]:flex-col max-[1260px]:px-[20px] max-[1260px]:mb-[60px]">
+      <section className="mt-[140px] max-[425px]:hidden max-w-[1600px] mx-auto">
+        <div className="max-w-full w-auto px-[80px] m-auto h-auto flex flex-row justify-between items-center relative max-[1260px]:flex-col max-[1260px]:px-[20px] max-[1260px]:mb-[60px]">
           <div className=" flex flex-col justify-between max-[1260px]:items-center max-[1260px]:text-center">
             <p className="text-primary text-[20px] font-[400] leading-[24px]">
               BİZ KİMİK ?
@@ -99,7 +99,7 @@ const WhoAreWe = () => {
 
           </div>
           <Image
-            className=" max-[1260px]:w-full max-[1260px]:h-auto"
+            className=""
             src={Iphone15Pro}
             alt="Iphone 15 Pro"
             width={800}
@@ -124,40 +124,6 @@ const WhoAreWe = () => {
               </text>
             </svg>
           </div>
-          {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="61"
-        height="61"
-        viewBox="0 0 61 61"
-        fill="none"
-        className="absolute top-[530px] right-[315px] z-[-10]"
-      >
-        <circle
-          opacity="0.5"
-          cx="30.9808"
-          cy="30.9808"
-          r="30"
-          transform="rotate(30 30.9808 30.9808)"
-          fill="url(#paint0_linear_2_4738)"
-        />
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="101"
-        height="101"
-        viewBox="0 0 101 101"
-        fill="none"
-        className="absolute bottom-[-200px] right-[206px]"
-      >
-        <circle
-          opacity="0.5"
-          cx="50.3013"
-          cy="50.3013"
-          r="50"
-          transform="rotate(-30 50.3013 50.3013)"
-          fill="url(#paint0_linear_2_4227)"
-        />
-      </svg> */}
         </div>
       </section>
     </>

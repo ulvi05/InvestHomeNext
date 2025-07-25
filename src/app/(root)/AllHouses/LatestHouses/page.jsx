@@ -22,7 +22,7 @@ const Page = () => {
       />
 
       <div className="max-w-[1600px] mx-auto max-[769px]:px-[40px] px-20 mt-[62px]">
-        <div className="w-full h-auto flex flex-row items-center justify-between gap-y-10 flex-wrap">
+        <div className="w-full grid grid-cols-4 max-[1025px]:grid-cols-3 max-[769px]:grid-cols-2 max-[426px]:grid-cols-1 gap-[24px]">
           {filteredHouses.map((house) => (
             <HouseCard key={house.id} house={house} />
           ))}

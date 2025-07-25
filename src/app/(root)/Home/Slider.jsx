@@ -86,7 +86,7 @@ const Slider = () => {
           </SwiperSlide>
         ))}
         <div className="w-full absolute top-[68px] left-[0px] z-10 text-white">
-          <div className="mx-auto max-w-[1600px] max-[1025px]:px-[40px] px-[80px]">
+          <div className="mx-auto max-w-[1600px] max-[1025px]:px-[20px] px-[80px]">
             <h5 className="">
               {/* <Trans i18nKey="slider.title" /> */}
             </h5>
