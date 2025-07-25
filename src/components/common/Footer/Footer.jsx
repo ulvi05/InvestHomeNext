@@ -16,7 +16,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <section className="bg-[#E4E7F5]">
+      <section className="mt-[120px] bg-[#E4E7F5]">
         <div className="relative mx-auto max-w-[1600px]">
           {/* Background overlay */}
           <div className="absolute inset-0 bg-[#4361EE] opacity-10 -z-10"></div>

@@ -1,8 +1,5 @@
 'use client';
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useRef, useState } from "react";
 import {
   All,
@@ -17,9 +14,6 @@ import {
   Store,
 } from "../../../components/core/Svg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css";
 
 export const SampleNextArrow = ({ swiperRef }) => {
@@ -85,20 +79,10 @@ function CenterMode() {
   const [activeId, setActiveId] = useState(1);
   const swiperRef = useRef(null);
 
-  const settings = {
-    className: "center-btns",
-    infinite: true,
-    slidesToScroll: 1,
-    speed: 500,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    variableWidth: true,
-  };
-
   return (
     <>
-      <section className="max-w-[1600px] mx-auto max-[426px]:hidden px-[80px] max-[1024]:px-[40px] max-[426]:px-[16px]">
-        <div className="w-full flex justify-start mb-10 md:mb-[63px] mt-8 md:mt-12">
+      <section className="mt-[65px] max-w-[1600px] mx-auto max-[426px]:hidden px-[80px] max-[1025]:px-[20px] max-[426]:px-[16px]">
+        <div className="w-full flex justify-start">
           <div className="flex gap-[12px] items-center relative w-full max-w-full md:max-w-[902px]">
             <SamplePrevArrow swiperRef={swiperRef} />
             <Swiper

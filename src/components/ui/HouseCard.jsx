@@ -45,7 +45,7 @@ const HouseCard = ({ house }) => {
   return (
     <>
       <Link href={`/HouseDetail/${house.id}`}>
-        <div className="w-full max-w-[340px] mb-3 card shadow-[0_2px_8px_rgba(0,0,0,0.15)] overflow-hidden rounded-[8px] select-none cursor-pointer">
+        <div className="h-full w-full mb-3 card shadow-[0_2px_8px_rgba(0,0,0,0.15)] overflow-hidden rounded-[8px] select-none cursor-pointer">
           <div className="img-container overflow-hidden rounded-[8px]">
             <div className="relative">
               <Swiper

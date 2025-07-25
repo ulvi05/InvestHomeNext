@@ -35,10 +35,10 @@ const CustomerFeedbacks = () => {
 
   return (
     <>
-      <section className="max-w-[1600px] mx-auto">
-        <div className="w-auto m-auto h-auto mt-[267px] mb-[127px] flex flex-row justify-between px-[80px]">
+      <section className="mt-[130px] max-w-[1600px] mx-auto max-[426px]:hidden">
+        <div className="w-auto m-auto h-auto  flex flex-row justify-between px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
           <div className="w-[415px] h-auto flex flex-col justify-center items-start">
-            <h2 className="text-2 text-[39.8px]/[47px] font-semibold mt-[44px]">
+            <h2 className="text-2 text-[39.8px]/[47px] font-semibold">
               Baxın Müştərilərimiz Nə Deyir!
             </h2>
             <p className="text-2 text-[16px]/[26px] font-normal mt-[30px]">

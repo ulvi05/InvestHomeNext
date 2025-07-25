@@ -42,7 +42,7 @@ const Header = () => {
     <>
       <HamBar state={isOpen} setState={setOpen} />
       <section className="max-[769px]:relative sticky z-998 top-0 bg-white">
-        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[40px] max-[426px]:px-[16px]">
+        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
           <div className="flex justify-between items-center py-[12px]">
             <div className="max-[426px]:w-[100%] h-full flex max-[930px]:justify-between justify-center items-center max-[1020px]:gap-[8px] gap-[34px]">
               <Link className="" href="/">

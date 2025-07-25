@@ -17,7 +17,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
     activeType === "enSon"
       ? "Ən son siyahıya alınmış əmlaklar"
       : activeType === "popular"
-        ? "Popular əmlaklar"
+        ? "Populyar əmlaklar"
         : "Endirimli evlər"
 
 
@@ -26,20 +26,20 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
 
   return (
     <>
-      <section className="max-[426px]:hidden max-w-[1600px] mx-auto max-[1025px]:px-[40px] max-[426px]:px-[16px] px-[80px]">
+      <section className="mt-[80px] max-[426px]:hidden max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]">
         <div className="flex m-auto justify-between items-center max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
-          <div>
-            <p className="text-[var(--text-color-2)] text-[2.1rem] font-[700] leading-[2.9rem] py-[1rem]">
+          <div className="flex flex-col gap-[24px]">
+            <p className="text-[var(--text-color-2)] text-[34px] font-[700] leading-[2.9rem]">
               {headingText}
             </p>
-            <p className="text-[var(--text-color-3)] font-[400] w-[31rem] leading-[1.6rem] max-[769px]:w-full">
+            <p className="text-[var(--text-color-3)] text-[16px] font-[400] leading-[1.6rem] max-[769px]:w-full">
               {descriptionText}
             </p>
           </div>
-          <div className="flex gap-[22px] items-center flex-wrap justify-center">
+          <div className="flex gap-[22px] items-center justify-center">
             <button
               onClick={() => setActiveType("enSon")}
-              className={`cursor-pointer flex items-center just gap-[8px]  px-[24px] py-[12px] rounded-[6.25rem]  border border-[var(--primary-color)] transition-colors  duration-300 ease-in-out 
+              className={`cursor-pointer flex items-center just gap-[8px] px-[24px] py-[12px] rounded-[6.25rem]  border border-[var(--primary-color)] transition-colors  duration-300 ease-in-out 
           ${activeType === "enSon"
                   ? "bg-[var(--primary-color)] text-[var(--white)]"
                   : "bg-[var(--white)] text-[var(--primary-color)]"
@@ -47,7 +47,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
           hover:bg-[var(--primary-color)] hover:text-[var(--white)] focus:bg-[var(--primary-color)] focus:text-[var(--white)] active:bg-[var(--primary-color)] active:text-[var(--white)]`}
             >
               <span className="text-[1.5rem] font-[500]"><GiBackwardTime /></span>
-              <span className="font-[500] whitespace-nowrap">
+              <span className="max-[530px]:hidden font-[500] whitespace-nowrap">
                 {/* {t("Ən son")} */}
                 Ən son
               </span>
@@ -64,7 +64,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
               <span>
                 <AiFillFire className="text-[1.5rem]" />
               </span>
-              <span className="font-[500] leading-[24px]">
+              <span className="max-[530px]:hidden font-[500] leading-[24px]">
                 {/* {t("Popular")} */}
                 Popular
 
@@ -82,7 +82,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
               <span>
                 <TbCirclePercentageFilled className="text-[1.5rem]" />
               </span>
-              <span className="font-[500] leading-[24px]" >
+              <span className="max-[530px]:hidden font-[500] leading-[24px]" >
                 {/* {t("Endirimli")} */}
                 Endirimli
 

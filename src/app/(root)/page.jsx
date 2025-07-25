@@ -19,7 +19,9 @@ export default function Home() {
       <Services />
       <BeAgent />
       <WhoAreWe />
-      <Agents />
+      <div className="max-[426px]:hidden">
+        <Agents />
+      </div>
       <Blogs />
       <CustomerFeedbacks />
     </div>
