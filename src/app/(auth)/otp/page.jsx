@@ -107,7 +107,7 @@ const OTPPage = () => {
             height={80}
             className="rounded-full"
           />
-          <p className="text-white text-[20px] font-semibold">İnvest Home</p>
+          <p className="text-white text-[20px] font-semibold main-logo-style">INVEST HOME</p>
         </div>
         <p className="text-white text-center text-[36px] font-semibold">
           “Yeni evinizi tapmağa bir addım yaxınsınız”

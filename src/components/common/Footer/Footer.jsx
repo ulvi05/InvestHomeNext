@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="flex flex-col gap-8">
               <div className="flex items-center gap-3">
                 <Image src={InvestHomeLogo} alt="Invest Home" width={50} height={50} />
-                <span className="text-[var(--text-color-2)] font-semibold text-xl">İnvest Home</span>
+                <span className="text-[var(--text-color-2)] font-semibold text-xl main-logo-style">INVEST <span className="text-[var(--primary-color)]">HOME</span></span>
               </div>
               <div className="flex flex-col gap-4 text-2">
                 <div className="flex items-center gap-2">
@@ -67,10 +67,10 @@ const Footer = () => {
                 {[
                   { name: "Ev Alqı-satqısı", href: "/" },
                   { name: "Kirayə", href: "/" },
-                  { name: "Haqqımızda", href: "/" },
+                  { name: "Haqqımızda", href: "/about-us" },
                   { name: "Xidmətlər", href: "/" },
                   { name: "Bloq", href: "/" },
-                  { name: "Agent ol", href: "/" },
+                  { name: "Agent ol", href: "/become-agent" },
                 ].map((link) => (
                   <li key={link.name}>
                     <Link href={link.href}>{link.name}</Link>

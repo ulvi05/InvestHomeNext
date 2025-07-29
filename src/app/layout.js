@@ -1,5 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-poppins',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,10 +26,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://kit.fontawesome.com/066942706e.js" crossOrigin="anonymous"></script>
+        <script
+          src="https://kit.fontawesome.com/066942706e.js"
+          crossOrigin="anonymous"
+          async
+        ></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         {children}
       </body>
