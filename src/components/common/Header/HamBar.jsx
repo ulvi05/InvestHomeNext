@@ -10,7 +10,7 @@ const HamBar = ({ state, setState }) => {
     const menuRef = useRef(null);
 
     const navLinks = [
-        { href: "/about", label: "Haqqımızda" },
+        { href: "/about-us", label: "Haqqımızda" },
         { href: "/services", label: "Xidmətlərimiz" },
         { href: "/blog", label: "Bloq" },
         { href: "/contact", label: "Əlaqə" },
@@ -55,7 +55,7 @@ const HamBar = ({ state, setState }) => {
                                     height={28}
                                     width={28}
                                 />
-                                <h1 className='font-[600] text-[16px]'>İnvest Home</h1>
+                                <h1 className='font-[600] text-[16px] main-logo-style'>INVEST HOME</h1>
                             </div>
                             <div onClick={() => { setState(false) }} className="x-icon h-[24px] w-[24px] flex items-center justify-center cursor-pointer">
                                 <Image

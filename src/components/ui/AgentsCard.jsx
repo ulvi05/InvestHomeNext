@@ -8,7 +8,7 @@ export default function AgentCard({ id, name, role, image, description }) {
   console.log(`AgentCard for "${name}" received id:`, id);
 
   return (
-    <Link href={`/about/${id}`} className="group block">
+    <Link href={`/about-us/${id}`} className="group block">
       <div className="flex flex-col items-center gap-[40px] h-full">
         <Image
           src={image}

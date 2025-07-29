@@ -15,9 +15,9 @@ const Page = () => {
 
   return (
     <>
-      <section className='max-w-[1600px] mx-auto'>
+      <section className='mt- max-w-[1600px] mx-auto'>
         <div className='py-6 px-6 bg-white rounded-2xl border-0.2 border-solid border-[rgba(2,131,111,0.5)]
-      shadow-[4px_16px_50px_0px_rgba(2,131,111,0.05)] flex flex-row items-center justify-center gap-[34px] mx-[80px] max-[1100px]:flex-col max-[1100px]:mx-[20px]'>
+          shadow-[4px_16px_50px_0px_rgba(2,131,111,0.05)] flex flex-row items-center justify-center gap-[34px] mx-[80px] max-[1100px]:flex-col max-[1100px]:mx-[20px]'>
 
           <Image
             src={LawyerImage}
