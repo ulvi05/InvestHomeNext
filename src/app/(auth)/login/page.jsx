@@ -51,7 +51,7 @@ const LoginPage = () => {
         <div className="flex flex-col items-center gap-8 pb-8">
           <h1 className="text-4xl font-medium text-1">Daxil ol</h1>
           <p className="text-lg text-1 text-center">
-            "Invest Home – Gələcəyin evini bu gün seç, rahatlığını sabahdan
+            "Invest <span className="text-[var(--color-primary)]">Home</span> – Gələcəyin evini bu gün seç, rahatlığını sabahdan
             yaşa!"
           </p>
         </div>
@@ -91,12 +91,12 @@ const LoginPage = () => {
 
         <div className="flex flex-col gap-6">
           <Link href="../otp">
-          <button
-            type="submit"
-            className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:opacity-90"
-          >
-            Daxil ol
-          </button>
+            <button
+              type="submit"
+              className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:opacity-90"
+            >
+              Daxil ol
+            </button>
           </Link>
 
 

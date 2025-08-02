@@ -69,7 +69,7 @@ const AgentForm = () => {
                                 />
                             </div>
                             <div className='mt-[7px]'>
-                                <h1 className='text-center text-[20px] font-[600]'>İnvest Home</h1>
+                                <h1 className='text-center text-[20px] font-[600] main-logo-style'>INVEST <span className='text-[var(--primary-color)]'>HOME</span></h1>
                             </div>
                         </div>
                         <ul className="mt-[38px] flex flex-col gap-[16px]">

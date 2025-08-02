@@ -22,7 +22,7 @@ const AuthAside = () => {
               className="rounded-full"
               alt="logo"
             />
-            <p className="text-[20px] font-[600]">İnvest Home</p>
+            <p className="text-[20px] font-[600] main-logo-style">INVEST HOME</p>
           </div>
           <p className="text-[36px] font-[600]">
             “Yeni evinizi tapmağa bir addım yaxınsınız”

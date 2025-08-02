@@ -66,7 +66,7 @@ const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
               </span>
               <span className="max-[530px]:hidden font-[500] leading-[24px]">
                 {/* {t("Popular")} */}
-                Popular
+                Populyar
 
               </span>
             </button>

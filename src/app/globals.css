@@ -1,5 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'handel-gothic-regular';
+  src: url('../../public/fonts/handel-gothic-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main-logo-style {
+  font-family: 'handel-gothic-regular', sans-serif !important;
+  font-weight: 100;
+}
 
 :root {
   --background: #ffffff;
