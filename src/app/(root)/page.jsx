@@ -14,7 +14,9 @@ export default function Home() {
     <div>
       <Slider />
       <CenterMode />
-      <RecentHouses />
+      <RecentHouses houseType="Ən son siyahıya alınmış əmlaklar"/>
+      <RecentHouses houseType="Satılıq əmlaklar"/>
+      <RecentHouses houseType="Kirayə evlər"/>
       <Neighborhoods />
       <Services />
       <BeAgent />

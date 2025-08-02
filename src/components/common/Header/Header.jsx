@@ -30,8 +30,8 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "/buy-sell", label: "Ev Alqı-satqısı" },
-    { href: "/rent", label: "Kirayə" },
+    { href: "/AllHouses/LatestHouses", label: "Ev Alqı-satqısı" },
+    { href: "/AllHouses/ForRent", label: "Kirayə" },
     { href: "/about", label: "Haqqımızda" },
     { href: "/services", label: "Xidmətlər" },
     { href: "/blog", label: "Bloq" },

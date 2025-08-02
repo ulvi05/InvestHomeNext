@@ -4,7 +4,7 @@ import { AiFillFire } from "react-icons/ai";
 import { TbCirclePercentageFilled } from "react-icons/tb";
 // import { useTranslation } from "react-i18next";
 
-const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
+const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
   // const {t} =useTranslation()
   // const headingText =
   //   activeType === "enSon"
@@ -15,7 +15,7 @@ const HouseTypeSelector = memo(({ activeType, setActiveType }) => {
 
   const headingText =
     activeType === "enSon"
-      ? "Ən son siyahıya alınmış əmlaklar"
+      ? houseType
       : activeType === "popular"
         ? "Populyar əmlaklar"
         : "Endirimli evlər"

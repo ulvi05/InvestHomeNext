@@ -10,13 +10,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 // import { useTranslation } from "react-i18next";
 
-const RecentHouses = () => {
+const RecentHouses = ({houseType}) => {
   // const {t}=useTranslation()
   const [activeType, setActiveType] = useState("enSon");
 
   return (
     <>
       <HouseTypeSelector
+        houseType={houseType}
         activeType={activeType}
         setActiveType={setActiveType}
       />
@@ -53,7 +54,16 @@ const RecentHouses = () => {
 
           <div className="max-[426px]:hidden flex cursor-pointer justify-center items-center my-[3rem]  hover:text-[var(--primary-color)] transition-all duration-300 ease-in">
             <Link
-              href={`/${activeType}`}
+              href={{
+                pathname:
+                  houseType === "Ən son siyahıya alınmış əmlaklar"
+                    ? "/AllHouses/LatestHouses"
+                    : houseType === "Satılıq əmlaklar"
+                    ? "/AllHouses/PropertiesForSale"
+                    : houseType === "Kirayə evlər"
+                    ? "/AllHouses/ForRent"
+                    : "/",
+              }}
               className="text-[var(--primary-color)] border border-[var(--primary-color)] w-[10rem] h-[3rem] flex justify-center items-center rounded-[6.25rem] hover:bg-[var(--primary-color)] hover:text-[var(--white)] transition-all duration-300 ease-in"
             >
               {/* {t("Hamısına bax")} */}
