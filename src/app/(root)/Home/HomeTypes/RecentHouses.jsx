@@ -57,11 +57,11 @@ const RecentHouses = ({houseType}) => {
               href={{
                 pathname:
                   houseType === "Ən son siyahıya alınmış əmlaklar"
-                    ? "/AllHouses/LatestHouses"
+                    ? "/all-houses/latest-houses"
                     : houseType === "Satılıq əmlaklar"
-                    ? "/AllHouses/PropertiesForSale"
+                    ? "/all-houses/properties-for-sale"
                     : houseType === "Kirayə evlər"
-                    ? "/AllHouses/ForRent"
+                    ? "/all-houses/for-rent"
                     : "/",
               }}
               className="text-[var(--primary-color)] border border-[var(--primary-color)] w-[10rem] h-[3rem] flex justify-center items-center rounded-[6.25rem] hover:bg-[var(--primary-color)] hover:text-[var(--white)] transition-all duration-300 ease-in"
