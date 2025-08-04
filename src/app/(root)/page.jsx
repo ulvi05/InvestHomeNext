@@ -11,12 +11,12 @@ import WhoAreWe from "./Home/WhoAreWe";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Slider />
       <CenterMode />
-      <RecentHouses houseType="Ən son siyahıya alınmış əmlaklar"/>
-      <RecentHouses houseType="Satılıq əmlaklar"/>
-      <RecentHouses houseType="Kirayə evlər"/>
+      <RecentHouses houseType="Ən son siyahıya alınmış əmlaklar" />
+      <RecentHouses houseType="Satılıq əmlaklar" />
+      <RecentHouses houseType="Kirayə evlər" />
       <Neighborhoods />
       <Services />
       <BeAgent />
@@ -26,6 +26,6 @@ export default function Home() {
       </div>
       <Blogs />
       <CustomerFeedbacks />
-    </div>
+    </>
   );
 }

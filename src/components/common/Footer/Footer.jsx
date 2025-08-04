@@ -10,13 +10,16 @@ import MailBlack from "../../../../public/icons/mailBlack.svg";
 import Arrow from "../../../../public/icons/Arrow 2.svg"
 import FooterIcon from '../../ui/FooterIcon';
 import { FaWhatsapp } from "react-icons/fa";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 
 
 const Footer = () => {
+  const isMobile = useMediaQuery('(max-width: 425px)');
+
   return (
     <>
-      <section className="mt-[120px] bg-[#E4E7F5]">
+      {isMobile ? '' : <section className="mt-[120px] bg-[#E4E7F5]">
         <div className="relative mx-auto max-w-[1600px]">
           {/* Background overlay */}
           <div className="absolute inset-0 bg-[#4361EE] opacity-10 -z-10"></div>
@@ -118,7 +121,7 @@ const Footer = () => {
 
           </div>
         </div>
-      </section>
+      </section>}
     </>
   );
 };
