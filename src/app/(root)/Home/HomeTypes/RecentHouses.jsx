@@ -21,7 +21,7 @@ const RecentHouses = ({houseType}) => {
         activeType={activeType}
         setActiveType={setActiveType}
       />
-      <section className='mt-[60px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]'>
+      <section className='max-[426px]:mt-[10px] mt-[60px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]'>
         <div className="flex flex-col overflow-hidden">
           <div>
             <Swiper

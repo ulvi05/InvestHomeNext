@@ -45,7 +45,7 @@ const HamBar = ({ state, setState }) => {
     return (
         <>
             {state && (
-                <section key={"hambar"} className={`bg-[rgba(0,0,0,0.3)] w-[100%] h-[100vh] fixed bottom-0 left-[0] z-999`}>
+                <section className={`bg-[rgba(0,0,0,0.3)] w-[100%] h-[100vh] fixed bottom-0 left-[0] z-999`}>
                     <div ref={menuRef} className='overflow-scroll bg-white h-[80vh] w-[266px] fixed bottom-0 left-[0]'>
                         <div className="sticky top-0 bg-white head py-[22px] px-[16px] flex items-center justify-between">
                             <div className='flex items-center'>
@@ -70,16 +70,14 @@ const HamBar = ({ state, setState }) => {
                             <ul>
                                 {navLinks.map((link) => {
                                     return (
-                                        <>
-                                            <li key={link.href} className='border-b-[1px] border-b-[#C8C7C752]'>
-                                                <Link
-                                                    className='px-[16px] py-[8px] w-[100%] inline-block'
-                                                    href={link.href}
-                                                >
-                                                    {link.label}
-                                                </Link>
-                                            </li>
-                                        </>
+                                        <li key={link.href} className='border-b-[1px] border-b-[#C8C7C752]'>
+                                            <Link
+                                                className='px-[16px] py-[8px] w-[100%] inline-block'
+                                                href={link.href}
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        </li>
                                     )
                                 })}
                             </ul>

@@ -15,6 +15,7 @@ import {
 } from "../../../components/core/Svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export const SampleNextArrow = ({ swiperRef }) => {
   return (
@@ -78,48 +79,52 @@ const categories = [
 function CenterMode() {
   const [activeId, setActiveId] = useState(1);
   const swiperRef = useRef(null);
+  const isMobile = useMediaQuery('(max-width: 425px)');
 
   return (
     <>
-      <section className="mt-[65px] max-w-[1600px] mx-auto max-[426px]:hidden px-[80px] max-[1025]:px-[20px] max-[426]:px-[16px]">
-        <div className="w-full flex justify-start">
-          <div className="flex gap-[12px] items-center relative w-full max-w-full md:max-w-[902px]">
-            <SamplePrevArrow swiperRef={swiperRef} />
-            <Swiper
-              loop={false}
-              slidesPerView="auto"
-              speed={500}
-              spaceBetween={8}
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-            >
-              {categories.map((cat) => {
-                const isActive = activeId === cat.id;
-                const Icon = cat.icon;
+      {isMobile ?
+        ''
+        : 
+        <section className="mt-[65px] max-w-[1600px] mx-auto px-[80px] max-[1025]:px-[20px] max-[426]:px-[16px]">
+          <div className="w-full flex justify-start">
+            <div className="flex gap-[12px] items-center relative w-full max-w-full md:max-w-[902px]">
+              <SamplePrevArrow swiperRef={swiperRef} />
+              <Swiper
+                loop={false}
+                slidesPerView="auto"
+                speed={500}
+                spaceBetween={8}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+              >
+                {categories.map((cat) => {
+                  const isActive = activeId === cat.id;
+                  const Icon = cat.icon;
 
-                return (
-                  <SwiperSlide key={cat.id} className="!w-auto">
-                    <div
-                      onClick={() => setActiveId(cat.id)}
-                      className={`border border-[#FAFAFA] rounded-[8px] py-[11px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
+                  return (
+                    <SwiperSlide key={cat.id} className="!w-auto">
+                      <div
+                        onClick={() => setActiveId(cat.id)}
+                        className={`border border-[#FAFAFA] rounded-[8px] py-[11px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
             ${isActive
-                          ? "bg-primary text-white border-primary"
-                          : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
-                        }
+                            ? "bg-primary text-white border-primary"
+                            : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
+                          }
           `}
-                    >
-                      <Icon isActive={isActive} />
-                      <span className="font-[500] text-[12px] md:text-[14px] whitespace-nowrap">
-                        {cat.label}
-                      </span>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-            <SampleNextArrow swiperRef={swiperRef} />
+                      >
+                        <Icon isActive={isActive} />
+                        <span className="font-[500] text-[12px] md:text-[14px] whitespace-nowrap">
+                          {cat.label}
+                        </span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+              <SampleNextArrow swiperRef={swiperRef} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>}
     </>
   );
 }

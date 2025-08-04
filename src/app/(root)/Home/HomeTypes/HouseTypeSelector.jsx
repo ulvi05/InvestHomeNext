@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { GiBackwardTime } from "react-icons/gi";
 import { AiFillFire } from "react-icons/ai";
 import { TbCirclePercentageFilled } from "react-icons/tb";
+import Link from "next/link";
 // import { useTranslation } from "react-i18next";
 
 const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
@@ -26,12 +27,29 @@ const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
 
   return (
     <>
-      <section className="mt-[80px] max-[426px]:hidden max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]">
-        <div className="flex m-auto justify-between items-center max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
+      <section className="max-[426px]:mt-[32px] mt-[80px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]">
+        <Link
+          href={{
+            pathname:
+              houseType === "Ən son siyahıya alınmış əmlaklar"
+                ? "/all-houses/latest-houses"
+                : houseType === "Satılıq əmlaklar"
+                  ? "/all-houses/properties-for-sale"
+                  : houseType === "Kirayə evlər"
+                    ? "/all-houses/for-rent"
+                    : "/",
+          }}
+        >
+          <div className="hidden max-[426px]:flex justify-between items-center">
+            <h1 className="font-[600] text-[16px]">{houseType}</h1>
+            <i className="fa-solid fa-arrow-right text-[22px]"></i>
+          </div>
+        </Link>
+        <div className="max-[426px]:hidden flex m-auto justify-between items-center max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
           <div className="flex flex-col gap-[24px]">
-            <p className="text-[var(--text-color-2)] text-[34px] font-[700] leading-[2.9rem]">
+            <h1 className="text-[var(--text-color-2)] text-[34px] font-[700] leading-[2.9rem]">
               {headingText}
-            </p>
+            </h1>
             <p className="text-[var(--text-color-3)] text-[16px] font-[400] leading-[1.6rem] max-[769px]:w-full">
               {descriptionText}
             </p>

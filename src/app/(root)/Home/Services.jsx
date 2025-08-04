@@ -2,13 +2,13 @@
 
 function Services() {
     return (
-        <section id="service" className="mt-[144px] max-w-[1600px] mx-auto font-primary bg-text-6 px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
+        <section id="service" className="mt-[144px] max-[426px]:mt-[0px] max-w-[1600px] mx-auto font-primary bg-text-6 px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
             <div className="flex flex-col items-center text-center gap-10 mb-[50px] max-[426px]:mb-[50px]">
                 <h4 className="text-primary text-[24px] leading-[28px] font-[400]">
                     XİDMƏTLƏRİMİZ
                 </h4>
                 <h2 className="max-[426px]:text-[20px] max-[426px]:leading-[23px] text-text-1 font-[500] text-[34px] leading-[46px] max-w-2xl">
-                    İnvest Hom ilə əmlakı asanlıqla tapın.
+                    İnvest Home ilə əmlakı asanlıqla tapın.
                 </h2>
             </div>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 function BeAgent() {
     return (
         <>
-            <section id="agent" className=" max-w-[1600px] mx-[auto] w-auto flex justify-center relative mt-[144px] max-[1025px]:mt-[60px] max-[426px]:mt-[20px] px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] max-[1400px]:mt-[100px] max-[1400px]:mb-[100px]">
+            <section id="agent" className=" max-w-[1600px] mx-[auto] w-auto flex justify-center relative mt-[144px] max-[1025px]:mt-[60px] max-[426px]:mt-[20px] max-[426px]:mb-[5px] px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] max-[1400px]:mt-[100px] max-[1400px]:mb-[100px]">
                 <div className="max-h-[260px] w-full flex max-[426px]:flex-row-reverse bg-primary pr-[100px] max-[769px]:pr-[0] max-[426px]:pl-[17px] rounded-[40px] max-[769px]:rounded-[12px] max-[426px]:rounded-[8px]">
                     <div className="shrink min-w-[100px] max-w-[356px] mt-[-5%] max-[425px]:basis-[10%]">
                         <Image
