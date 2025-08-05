@@ -10,11 +10,11 @@ const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex">
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer flex flex-row items-center text-[14px] text-white dark:text-[var(--main-color)] rounded-md px-3 py-1 focus:outline-none"
+          className="cursor-pointer flex flex-row items-center text-[14px] text-white dark:text-[var(--main-color)] rounded-md focus:outline-none"
         >
           <Image
             src={currentFlag}

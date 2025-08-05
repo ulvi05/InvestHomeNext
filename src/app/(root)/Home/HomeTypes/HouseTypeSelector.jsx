@@ -45,7 +45,7 @@ const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
             <i className="fa-solid fa-arrow-right text-[22px]"></i>
           </div>
         </Link>
-        <div className="max-[426px]:hidden flex m-auto justify-between items-center max-[1050px]:flex-col max-[1050px]:items-center max-[1050px]:gap-4 ">
+        <div className="max-[426px]:hidden flex m-auto justify-between max-[1050px]:flex-col max-[1050px]:gap-4 ">
           <div className="flex flex-col gap-[24px]">
             <h1 className="text-[var(--text-color-2)] text-[34px] font-[700] leading-[2.9rem]">
               {headingText}

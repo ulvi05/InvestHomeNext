@@ -9,7 +9,7 @@ export default function AgentCard({ id, name, role, image, description }) {
 
   return (
     <Link href={`/about-us/${id}`} className="group block">
-      <div className="flex flex-col items-center gap-[40px] h-full">
+      <div className="flex flex-col items-center gap-[20px] h-full">
         <Image
           src={image}
           alt={name}
@@ -17,8 +17,8 @@ export default function AgentCard({ id, name, role, image, description }) {
           height={200}
           className="rounded-full"
         />
-        <div className='flex flex-col gap-[20px] h-full justify-between'>
-          <div className='flex flex-col text-center gap-[16px] '>
+        <div className='flex flex-col gap-[20px] h-full'>
+          <div className='flex flex-col text-center'>
             <h3 className="text-black text-[28px] font-normal">{name}</h3>
             <h4 className="text-primary text-[24px] font-medium block">{role}</h4>
           </div>
