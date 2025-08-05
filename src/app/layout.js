@@ -110,6 +110,7 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="apple-mobile-web-app-title" content="Invest Home" />
         <script
+          src="https://kit.fontawesome.com/066942706e.js"
           crossOrigin="anonymous"
           async
         ></script>
