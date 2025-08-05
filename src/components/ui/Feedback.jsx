@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Feedback = ({ name, image, stars, description }) => {
   return (
-    <div className="w-[500px] h-[358px] bg-white rounded-[30px] shadow-[10px_10px_30px_0px_rgba(0,0,0,0.10)] flex flex-col px-[60px] ">
+    <div className="bg-white rounded-[30px] flex flex-col px-[60px] max-[650px]:px-[20px] ">
       <svg
         className="mt-[34px]"
         xmlns="http://www.w3.org/2000/svg"
@@ -19,19 +19,19 @@ const Feedback = ({ name, image, stars, description }) => {
           fillOpacity="0.4"
         />
       </svg>
-      <h4 className="w-[380px] h-auto text-2 text-[19.4px] font-medium mt-[18.74px]">
+      <h4 className="text-2 text-[19.4px] font-medium mt-[18.74px]">
         {description}
       </h4>
-      <hr className="w-[400px] h-[1px] text-[#D4D4D4] mt-[11px]" />
-      <div className="w-full h-auto flex flex-row justify-between items-center mt-[20px] mb-[28px]">
+      <hr className="w-full h-[1px] text-[#D4D4D4] mt-[11px]" />
+      <div className="flex flex-row justify-between items-center mt-[20px] mb-[28px]">
         <div className="flex flex-row gap-[15px] items-center">
-          <div className="w-[50px] h-[50px] rounded-full bg-[#D9D9D9]">
+          <div className="rounded-full bg-[#D9D9D9]">
             <Image
-              className="w-full h-full rounded-full object-cover"
+              className="min-w-[50px] min-h-[50px] rounded-full object-cover"
               src={image}
               alt="..."
-              width={50}
-              height={50}
+              width={0}
+              height={0}
             />
           </div>
           <h4 className="text-2 text-[19.4px] font-medium">
