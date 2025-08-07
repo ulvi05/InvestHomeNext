@@ -5,7 +5,7 @@ import Image from "next/image";
 import InvestHomeLogo from "../../../../public/images/InvestHomeLogo.png";
 import MobileInvestHomeLogo from "../../../../public/images/logo.png";
 import Link from "next/link";
-import HamBar from "./HamBar";
+import HamMenu from "./HamMenu";
 import { useEffect, useState } from "react";
 // import { useTranslation } from "i18next";
 
@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <>
-      <HamBar state={isOpen} setState={setOpen} />
+      <HamMenu state={isOpen} setState={setOpen} />
       <section className="max-[769px]:relative sticky z-998 top-0 bg-white">
         <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
           <div className="flex justify-between items-center py-[12px]">

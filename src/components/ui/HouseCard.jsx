@@ -53,6 +53,7 @@ const HouseCard = ({ house }) => {
                 slidesPerView={1}
                 loop={true}
                 speed={500}
+                spaceBetween={5}
                 navigation={{
                   nextEl: `.custom-next-${house.id}`,
                   prevEl: `.custom-prev-${house.id}`,
