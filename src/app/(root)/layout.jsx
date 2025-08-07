@@ -1,6 +1,6 @@
 import Footer from "@/components/common/Footer/Footer";
 import SubFooter from "@/components/common/Footer/SubFooter";
-import MobileNav from "@/components/common/Footer/TabBar";
+import TabBar from "@/components/common/Footer/TabBar";
 import ContactHeader from "@/components/common/Header/ContactHeader";
 import Header from "@/components/common/Header/Header";
 import { LangProvider } from "@/context/LangContext";
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
                 <ContactHeader />
                 <Header />
                 {children}
-                <MobileNav />
+                <TabBar />
                 
                 <Footer />
                 <SubFooter />

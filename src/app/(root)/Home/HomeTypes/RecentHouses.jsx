@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 // import { useTranslation } from "react-i18next";
 
-const RecentHouses = ({houseType}) => {
+const RecentHouses = ({ houseType }) => {
   // const {t}=useTranslation()
   const [activeType, setActiveType] = useState("enSon");
 
@@ -21,7 +21,7 @@ const RecentHouses = ({houseType}) => {
         activeType={activeType}
         setActiveType={setActiveType}
       />
-      <section className='max-[426px]:mt-[10px] mt-[60px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]'>
+      <section className='max-[426px]:mt-[10px] mt-[60px] max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] max-[426px]:pr-0'>
         <div className="flex flex-col overflow-hidden">
           <div>
             <Swiper
@@ -40,7 +40,7 @@ const RecentHouses = ({houseType}) => {
                 },
                 1024: {
                   spaceBetween: 24,
-                  slidesPerView: 4.2
+                  slidesPerView: 4.4
                 }
               }}
             >
@@ -52,17 +52,17 @@ const RecentHouses = ({houseType}) => {
             </Swiper>
           </div>
 
-          <div className="max-[426px]:hidden flex cursor-pointer justify-center items-center my-[3rem]  hover:text-[var(--primary-color)] transition-all duration-300 ease-in">
+          <div className="max-[426px]:hidden flex cursor-pointer justify-center items-center my-[3rem] hover:text-[var(--primary-color)] transition-all duration-300 ease-in">
             <Link
               href={{
                 pathname:
                   houseType === "Ən son siyahıya alınmış əmlaklar"
                     ? "/all-houses/latest-houses"
                     : houseType === "Satılıq əmlaklar"
-                    ? "/all-houses/properties-for-sale"
-                    : houseType === "Kirayə evlər"
-                    ? "/all-houses/for-rent"
-                    : "/",
+                      ? "/all-houses/properties-for-sale"
+                      : houseType === "Kirayə evlər"
+                        ? "/all-houses/for-rent"
+                        : "/",
               }}
               className="text-[var(--primary-color)] border border-[var(--primary-color)] w-[10rem] h-[3rem] flex justify-center items-center rounded-[6.25rem] hover:bg-[var(--primary-color)] hover:text-[var(--white)] transition-all duration-300 ease-in"
             >
