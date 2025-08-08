@@ -34,7 +34,7 @@ const Header = () => {
     { href: "/all-houses/for-rent", label: "Kirayə" },
     { href: "/about-us", label: "Haqqımızda" },
     { href: "/services", label: "Xidmətlər" },
-    { href: "/blog", label: "Bloq" },
+    { href: "/blogs", label: "Bloq" },
     { href: "/become-agent", label: "Agent Ol" },
   ];
 
