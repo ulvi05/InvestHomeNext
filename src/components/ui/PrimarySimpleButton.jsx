@@ -9,7 +9,7 @@ const PrimarySimpleButton = ({ icon, name }) => {
         src={icon}
         alt={name}
         width={24}
-        height={24} /> {/* Added closing tag for Image component */}
+        height={24} /> 
       {name}
     </button> 
     </>
