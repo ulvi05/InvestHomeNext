@@ -1,9 +1,11 @@
 import Agents from "./Home/Agents";
 import BeAgent from "./Home/BeAgent";
 import Blogs from "./Home/Blogs";
-import CenterMode from "./Home/CenterMode";
+import Category from "./Home/Category";
 import CustomerFeedbacks from "./Home/CustomerFeedbacks";
 import RecentHouses from "./Home/HomeTypes/RecentHouses";
+import MobileCategory from "./Home/MobileCategory";
+import MobileSearch from "./Home/MobileSearch";
 import Neighborhoods from "./Home/Neighborhoods";
 import Services from "./Home/Services";
 import { Slider } from "./Home/Slider";
@@ -13,7 +15,9 @@ export default function Home() {
   return (
     <>
       <Slider />
-      <CenterMode />
+      <Category />
+      <MobileSearch />
+      <MobileCategory />
       <RecentHouses houseType="Ən son siyahıya alınmış əmlaklar" />
       <RecentHouses houseType="Satılıq əmlaklar" />
       <RecentHouses houseType="Kirayə evlər" />

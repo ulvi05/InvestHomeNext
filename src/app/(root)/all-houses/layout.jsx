@@ -1,5 +1,5 @@
 import { LangProvider } from "@/context/LangContext";
-import CenterMode from "../Home/CenterMode";
+import Category from "../Home/Category";
 import { Slider } from "../Home/Slider";
 import BeAgent from "../Home/BeAgent";
 import ScrollToTop from "@/components/core/ScrollToTop";
@@ -10,7 +10,7 @@ export default function Layout({ children }) {
             <main>
                 <ScrollToTop />
                 <Slider />
-                <CenterMode />
+                <Category />
                 {children}
                 <BeAgent />
             </main>

@@ -2,11 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import InvestHomeLogo from "../../../../public/images/InvestHomeLogo.png";
-import MobileInvestHomeLogo from "../../../../public/images/logo.png";
 import Link from "next/link";
 import HamMenu from "./HamMenu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 // import { useTranslation } from "i18next";
 
 const Header = () => {
@@ -16,18 +15,9 @@ const Header = () => {
 
   const [isOpen, setOpen] = useState(false);
 
-  const [isTablet, setIsTablet] = useState(false);
+  const isTablet = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 425px)');
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    const updateIsTablet = () => setIsTablet(mediaQuery.matches);
-
-    updateIsTablet();
-    mediaQuery.addEventListener('change', updateIsTablet);
-
-    return () => mediaQuery.removeEventListener('change', updateIsTablet);
-
-  }, []);
 
   const navLinks = [
     { href: "/all-houses/latest-houses", label: "Ev Alqı-satqısı" },
@@ -41,21 +31,43 @@ const Header = () => {
   return (
     <>
       <HamMenu state={isOpen} setState={setOpen} />
-      <section className="max-[769px]:relative sticky z-998 top-0 bg-white">
+      <section className="sticky z-998 top-0 bg-white">
         <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
-          <div className="flex justify-between items-center py-[12px]">
+          <div className="flex justify-between items-center py-[10px]">
             <div className="max-[426px]:w-[100%] h-full flex max-[930px]:justify-between justify-center items-center max-[1020px]:gap-[8px] gap-[34px]">
               <Link className="" href="/">
-                <div className="w-auto h-full flex justify-center items-center gap-[15px]">
-                  <Image
-                    src={isTablet ? MobileInvestHomeLogo : InvestHomeLogo}
-                    alt="Invest Home Logo"
-                    width={60}
-                    height={55}
-                    priority
-                    className="flex-shrink-0"
-                  />
-                  <p className="main-logo-style max-[1270px]:hidden max-[1130px]:block max-[580px]:hidden max-[426px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
+                <div className="w-auto h-full flex justify-center items-center gap-[15px] max-[426px]:gap-[7px]">
+                  {isMobile ?
+                    <Image
+                      src={"/images/logo.png"}
+                      alt="Invest Home Logo"
+                      width={32}
+                      height={32}
+                      priority
+                      className="flex-shrink-0"
+                    />
+                    :
+                    isTablet
+                      ?
+                      <Image
+                        src={"/images/logo.png"}
+                        alt="Invest Home Logo"
+                        width={50}
+                        height={50}
+                        priority
+                        className="flex-shrink-0"
+                      />
+                      :
+                      <Image
+                        src={"/images/InvestHomeLogo.png"}
+                        alt="Invest Home Logo"
+                        width={60}
+                        height={55}
+                        priority
+                        className="flex-shrink-0"
+                      />
+                  }
+                  <p className="main-logo-style max-[1270px]:hidden max-[1130px]:block max-[580px]:hidden max-[426px]:block max-[426px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
                     INVEST <span className="text-[var(--primary-color)]">HOME</span>
                   </p>
                 </div>
@@ -76,7 +88,12 @@ const Header = () => {
                 </ul>
               </div>
               <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[426px]:flex items-center justify-center">
-                <i className="text-[24px] fa-solid fa-bars"></i>
+                <Image
+                  src={"/icons/hamburger-menu.svg"}
+                  alt="ham-menu"
+                  width={24}
+                  height={24}
+                />
               </div>
             </div>
 
