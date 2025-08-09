@@ -4,6 +4,7 @@ import Image from "next/image";
 import X_Icon from "../../../../public/icons/x.svg"
 import Link from 'next/link';
 import { useLang } from '@/context/LangContext';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const HamMenu = ({ state, setState }) => {
     const { handleSelect, flags } = useLang();
@@ -47,15 +48,17 @@ const HamMenu = ({ state, setState }) => {
             {state && (
                 <section className={`bg-[rgba(0,0,0,0.3)] w-[100%] h-[100vh] fixed bottom-0 left-[0] z-999`}>
                     <div ref={menuRef} className='overflow-scroll bg-white h-[100vh] w-[266px] fixed bottom-0 left-[0]'>
-                        <div className="sticky top-0 bg-white head py-[22px] px-[16px] flex items-center justify-between">
-                            <div className='flex items-center'>
+                        <div className="sticky top-0 bg-white head py-[10px] px-[16px] flex items-center justify-between">
+                            <div className='flex items-center gap-[7px]'>
                                 <Image
                                     src={"/images/logo.png"}
-                                    alt='logo'
-                                    height={28}
-                                    width={28}
+                                    alt="Invest Home Logo"
+                                    width={32}
+                                    height={32}
+                                    priority
+                                    className="flex-shrink-0"
                                 />
-                                <h1 className='font-[600] text-[16px] main-logo-style'>INVEST HOME</h1>
+                                <h1 className='font-[600] text-[16px] main-logo-style'>INVEST <span className="text-[var(--primary-color)]">HOME</span></h1>
                             </div>
                             <div onClick={() => { setState(false) }} className="x-icon h-[24px] w-[24px] flex items-center justify-center cursor-pointer">
                                 <Image

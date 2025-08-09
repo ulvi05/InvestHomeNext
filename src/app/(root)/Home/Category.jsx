@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import {
   All,
   Building,
-  Garden,
+  Datcha,
   Land,
   Neighbour,
   Office,
@@ -70,14 +70,15 @@ const categories = [
   { id: 4, label: "Populyar elanlar", icon: Popular },
   { id: 5, label: "Qonşuluq əmlakları", icon: Neighbour },
   { id: 6, label: "Mənzil", icon: Building },
-  { id: 7, label: "Bağ Evi", icon: Garden },
+  { id: 7, label: "Bağ Evi", icon: Datcha },
   { id: 8, label: "Obyekt", icon: Store },
   { id: 9, label: "Torpaq", icon: Land },
   { id: 10, label: "Ofis", icon: Office },
 ];
 
-function CenterMode() {
+function Category() {
   const [activeId, setActiveId] = useState(1);
+  const [hover, setHover] = useState(-1);
   const swiperRef = useRef(null);
   const isMobile = useMediaQuery('(max-width: 425px)');
 
@@ -85,7 +86,7 @@ function CenterMode() {
     <>
       {isMobile ?
         ''
-        : 
+        :
         <section className="mt-[65px] max-w-[1600px] mx-auto px-[80px] max-[1025]:px-[20px] max-[426]:px-[16px]">
           <div className="w-full flex justify-start">
             <div className="flex gap-[12px] items-center relative w-full max-w-full md:max-w-[902px]">
@@ -99,20 +100,23 @@ function CenterMode() {
               >
                 {categories.map((cat) => {
                   const isActive = activeId === cat.id;
+                  const isHover = hover === cat.id;
                   const Icon = cat.icon;
 
                   return (
                     <SwiperSlide key={cat.id} className="!w-auto">
                       <div
+                        onMouseEnter={() => setHover(cat.id)}
+                        onMouseLeave={() => setHover(-1)}
                         onClick={() => setActiveId(cat.id)}
-                        className={`border border-[#FAFAFA] rounded-[8px] py-[11px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
-            ${isActive
+                        className={`border border-[#FAFAFA] rounded-[8px] h-[46px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
+                          ${isActive
                             ? "bg-primary text-white border-primary"
                             : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
                           }
-          `}
+                        `}
                       >
-                        <Icon isActive={isActive} />
+                        <Icon isHover={isHover} isActive={isActive} />
                         <span className="font-[500] text-[12px] md:text-[14px] whitespace-nowrap">
                           {cat.label}
                         </span>
@@ -129,4 +133,4 @@ function CenterMode() {
   );
 }
 
-export default CenterMode;
+export default Category;
