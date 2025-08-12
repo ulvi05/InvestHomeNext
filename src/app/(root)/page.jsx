@@ -1,15 +1,15 @@
-import Agents from "./home/Agents";
-import BeAgent from "./home/BeAgent";
-import Blogs from "./home/Blogs";
-import Category from "./home/Category";
-import CustomerFeedbacks from "./home/CustomerFeedbacks";
-import RecentHouses from "./home/HomeTypes/RecentHouses";
-import MobileCategory from "./home/MobileCategory";
-import MobileSearch from "./home/MobileSearch";
-import Neighborhoods from "./home/Neighborhoods";
-import Services from "./home/Services";
-import { Slider } from "./home/Slider";
-import WhoAreWe from "./home/WhoAreWe";
+import Agents from "./Home/Agents";
+import BeAgent from "./Home/BeAgent";
+import Blogs from "./Home/Blogs";
+import Category from "./Home/Category";
+import CustomerFeedbacks from "./Home/CustomerFeedbacks";
+import RecentHouses from "./Home/HomeTypes/RecentHouses";
+import MobileCategory from "./Home/MobileCategory";
+import MobileSearch from "./Home/MobileSearch";
+import Neighborhoods from "./Home/Neighborhoods";
+import Services from "./Home/Services";
+import { Slider } from "./Home/Slider";
+import WhoAreWe from "./Home/WhoAreWe";
 
 export default function Home() {
   return (

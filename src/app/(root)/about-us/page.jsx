@@ -1,8 +1,8 @@
 import React from 'react'
 import agentsData from "@/components/core/AgentsData";
 import AgentCard from "@/components/ui/AgentsCard";
-import Agents from "../home/Agents";
-import BeAgent from '../home/BeAgent';
+import Agents from "../Home/Agents";
+import BeAgent from '../Home/BeAgent';
 import AboutPageImage from "../../../../public/images/AboutPagePhoto.jpg";
 
 const page = () => {

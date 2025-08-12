@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import HouseTypeSelector from "../../home/HomeTypes/HouseTypeSelector";
+import HouseTypeSelector from "../../Home/HomeTypes/HouseTypeSelector";
 import { houseData } from "@/components/core/house";
 import HouseCard from "@/components/ui/HouseCard";
 
