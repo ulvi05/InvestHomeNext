@@ -1,8 +1,8 @@
 import React from 'react'
 import agentsData from "@/components/core/AgentsData";
 import AgentCard from "@/components/ui/AgentsCard";
-import Agents from "../Home/Agents";
-import BeAgent from '../Home/BeAgent';
+import Agents from "../home/Agents";
+import BeAgent from '../home/BeAgent';
 import AboutPageImage from "../../../../public/images/AboutPagePhoto.jpg";
 
 const page = () => {
@@ -14,7 +14,7 @@ const page = () => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}>
-                <div className='max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]'>
+                <div className='max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px]'>
                     <h1 className='text-white text-[40px] max-[769px]:text-[24px] italic font-medium'>
                         Biz Kimik?
                     </h1>

@@ -54,7 +54,7 @@ const getVisiblePages = (currentPage, totalPages) => {
 
   return (
     <>
-      <div className='max-w-[1600px] mx-auto w-auto h-auto flex flex-row justify-between items-center px-[80px] mt-[64px] max-[1025px]:px-[20px] max-[426px]:px-[16px]'>
+      <div className='max-w-[1600px] mx-auto w-auto h-auto flex flex-row justify-between items-center px-[80px] mt-[64px] max-[1025px]:px-[20px] max-[431px]:px-[16px]'>
         {blogData.slice(0, 1).map((data, index) => (
         <Link href={`/blogs/${data.id}`}>
           <div key={data.id} className='flex flex-col items-start justify-center'>

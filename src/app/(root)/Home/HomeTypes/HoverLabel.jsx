@@ -43,7 +43,7 @@ const HoverLabel = ({ iconSrc, label, bgColor }) => {
       style={{ width: `${width}px`, backgroundColor: bgColor }}
       className="transition-all duration-300 ease-in-out rounded-full overflow-hidden flex items-center text-center cursor-pointer"
     >
-      <div className="max-[426px]:w-[18px] max-[426px]:h-[18px] w-[24px] h-[24px] flex items-center justify-center shrink-0">
+      <div className="max-[431px]:w-[18px] max-[431px]:h-[18px] w-[24px] h-[24px] flex items-center justify-center shrink-0">
         <Image
           src={iconSrc}
           alt="icon"

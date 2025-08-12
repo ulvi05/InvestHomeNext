@@ -6,7 +6,7 @@ import TabBarBg from '../../../../public/images/tab-bar.svg'
 import Link from 'next/link';
 
 const TabBar = () => {
-    const isMobile = useMediaQuery('(max-width: 425px)');
+    const isMobile = useMediaQuery('(max-width: 430px)');
 
     return (
         <>

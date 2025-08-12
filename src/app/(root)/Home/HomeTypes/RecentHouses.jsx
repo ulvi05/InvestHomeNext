@@ -21,7 +21,7 @@ const RecentHouses = ({ houseType }) => {
         activeType={activeType}
         setActiveType={setActiveType}
       />
-      <section className='max-[426px]:mt-[10px] mt-[60px] max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] max-[426px]:pr-0'>
+      <section className='max-[431px]:mt-[10px] mt-[60px] max-w-[1600px] mx-auto px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px] max-[431px]:pr-0'>
         <div className="flex flex-col overflow-hidden">
           <div>
             <Swiper
@@ -52,7 +52,7 @@ const RecentHouses = ({ houseType }) => {
             </Swiper>
           </div>
 
-          <div className="max-[426px]:hidden flex cursor-pointer justify-center items-center my-[3rem] hover:text-[var(--primary-color)] transition-all duration-300 ease-in">
+          <div className="max-[431px]:hidden flex cursor-pointer justify-center items-center my-[3rem] hover:text-[var(--primary-color)] transition-all duration-300 ease-in">
             <Link
               href={{
                 pathname:

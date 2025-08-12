@@ -80,7 +80,7 @@ function Category() {
   const [activeId, setActiveId] = useState(1);
   const [hover, setHover] = useState(-1);
   const swiperRef = useRef(null);
-  const isMobile = useMediaQuery('(max-width: 425px)');
+  const isMobile = useMediaQuery('(max-width: 430px)');
 
   return (
     <>
@@ -109,10 +109,10 @@ function Category() {
                         onMouseEnter={() => setHover(cat.id)}
                         onMouseLeave={() => setHover(-1)}
                         onClick={() => setActiveId(cat.id)}
-                        className={`border border-[#FAFAFA] rounded-[8px] h-[46px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
+                        className={`rounded-[8px] h-[46px] px-[20px] flex items-center gap-[8px] cursor-pointer select-none
                           ${isActive
-                            ? "bg-primary text-white border-primary"
-                            : "bg-white text-black border-[#E9E9E9] hover:bg-primary hover:text-white hover:border-primary"
+                            ? "bg-primary text-white"
+                            : "bg-white text-black hover:bg-primary hover:text-white"
                           }
                         `}
                       >

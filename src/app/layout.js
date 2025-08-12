@@ -1,7 +1,6 @@
 import localFont from 'next/font/local';
 import "./globals.css";
 
-
 const poppins = localFont({
   src: [
     {
@@ -106,7 +105,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Invest Home" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="theme-color" content="#ffffff" />
@@ -118,7 +117,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body
-        className={`${poppins.variable} antialiased`}
+        className={`${poppins?.variable || ""} antialiased`}
       >
         {children}
       </body>

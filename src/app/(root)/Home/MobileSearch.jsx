@@ -5,7 +5,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import Image from 'next/image';
 
 const MobileSearch = () => {
-  const isMobile = useMediaQuery('(max-width: 425px)');
+  const isMobile = useMediaQuery('(max-width: 430px)');
 
   const [value, setValue] = useState("");
 

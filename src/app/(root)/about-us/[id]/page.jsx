@@ -67,12 +67,12 @@ const Page = () => {
           </div>
         </div>
 
-        <div className='px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px] mt-6 flex flex-col items-start justify-start gap-5 mb-[85px]'>
+        <div className='px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px] mt-6 flex flex-col items-start justify-start gap-5 mb-[85px]'>
           <p className='text-black text-center text-[32px]/[48px] font-medium'>
             Əmlaklarım
           </p>
 
-          <div className='w-full grid grid-cols-4 max-[1025px]:grid-cols-3 max-[769px]:grid-cols-2 max-[426px]:grid-cols-1 gap-[24px]'>
+          <div className='w-full grid grid-cols-4 max-[1025px]:grid-cols-3 max-[769px]:grid-cols-2 max-[431px]:grid-cols-1 gap-[24px]'>
             {houseData.map((house) => (
               <HouseCard
                 key={house.id}

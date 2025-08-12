@@ -27,7 +27,7 @@ const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
 
   return (
     <>
-      <section className="max-[426px]:mt-[32px] mt-[80px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[426px]:px-[16px] px-[80px]">
+      <section className="max-[431px]:mt-[32px] mt-[80px] max-w-[1600px] mx-auto max-[1025px]:px-[20px] max-[431px]:px-[16px] px-[80px]">
         <Link
           href={{
             pathname:
@@ -40,12 +40,12 @@ const HouseTypeSelector = memo(({ houseType, activeType, setActiveType }) => {
                     : "/",
           }}
         >
-          <div className="hidden max-[426px]:flex justify-between items-center">
+          <div className="hidden max-[431px]:flex justify-between items-center">
             <h1 className="font-[600] text-[16px]">{houseType}</h1>
             <i className="fa-solid fa-arrow-right text-[22px]"></i>
           </div>
         </Link>
-        <div className="max-[426px]:hidden flex m-auto justify-between max-[1050px]:flex-col max-[1050px]:gap-4 ">
+        <div className="max-[431px]:hidden flex m-auto justify-between max-[1050px]:flex-col max-[1050px]:gap-4 ">
           <div className="flex flex-col gap-[24px]">
             <h1 className="text-[var(--text-color-2)] text-[34px] font-[700] leading-[2.9rem]">
               {headingText}

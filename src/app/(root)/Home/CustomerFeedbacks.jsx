@@ -34,8 +34,8 @@ const CustomerFeedbacks = () => {
 
   return (
     <>
-      <section className="mt-[130px] max-w-[1600px] mx-auto max-[426px]:hidden">
-        <div className="flex max-[1050px]:flex-col justify-between gap-x-[100px] gap-y-[50px] px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
+      <section className="mt-[130px] max-w-[1600px] mx-auto max-[431px]:hidden">
+        <div className="flex max-[1050px]:flex-col justify-between gap-x-[100px] gap-y-[50px] px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px]">
           <div className="min-[1050px]:max-w-[415px] flex flex-col justify-center items-start">
             <h2 className="text-2 text-[39.8px]/[47px] font-semibold">
               Baxın Müştərilərimiz Nə Deyir!
