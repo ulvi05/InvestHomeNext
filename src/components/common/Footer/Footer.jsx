@@ -15,7 +15,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 
 const Footer = () => {
-  const isMobile = useMediaQuery('(max-width: 425px)');
+  const isMobile = useMediaQuery('(max-width: 430px)');
 
   return (
     <>

@@ -75,7 +75,7 @@ const Blogs = () => {
 
   return (
     <>
-      <section className="max-[426px]:hidden [background:linear-gradient(180deg,_#02836F_0%,_#001D19_100%)]">
+      <section className="max-[431px]:hidden [background:linear-gradient(180deg,_#02836F_0%,_#001D19_100%)]">
         <div className="max-w-[1600px] mx-[auto] w-full items-center pt-[140px] px-[80px] max-[1025px]:px-[20px]">
           <p className="text-white text-[19.4px] font-medium tracking-[2.91px] uppercase">
             Trenddə nədir ?

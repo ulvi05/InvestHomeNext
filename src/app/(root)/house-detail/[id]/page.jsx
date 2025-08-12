@@ -1,15 +1,18 @@
-import AboutTheAnnouncement from '../AboutTheAnnouncement'
-import MainDetails from '../MainDetails'
-import Nearby from '../Nearby'
+import Details from '../Details'
+import Hero from '../Hero'
+import Map from '../Map'
 import SimilarAnnouncements from '../SimilarAnnouncements'
 
-const page = () => {
+const page = async ({ params }) => {
+
+  const { id } = await params
+
   return (
     <>
-    <MainDetails />
-    <AboutTheAnnouncement />
-    <Nearby />
-    <SimilarAnnouncements />
+      <Hero id={id} />
+      <Details />
+      <Map />
+      <SimilarAnnouncements />
     </>
   )
 }

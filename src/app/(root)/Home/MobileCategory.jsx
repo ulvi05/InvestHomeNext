@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React from 'react'
 
 const MobileCategory = () => {
-    const isMobile = useMediaQuery('(max-width: 425px)');
+    const isMobile = useMediaQuery('(max-width: 430px)');
 
     return (
         <>

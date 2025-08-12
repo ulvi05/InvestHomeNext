@@ -45,7 +45,7 @@ const HouseCard = ({ house }) => {
   return (
     <>
       <Link href={`/house-detail/${house.id}`}>
-        <div className="h-full w-full mb-3 card shadow-[0_2px_8px_rgba(0,0,0,0.15)] overflow-hidden rounded-[8px] select-none cursor-pointer">
+        <div className=" mb-3 card shadow-[0_2px_8px_rgba(0,0,0,0.15)] overflow-hidden rounded-[8px] select-none cursor-pointer">
           <div className="img-container overflow-hidden rounded-[8px]">
             <div className="relative">
               <Swiper
@@ -88,25 +88,26 @@ const HouseCard = ({ house }) => {
                   return (
                     <>
                       <SwiperSlide key={index}>
-                        <Image
-                          src={img}
-                          alt="house_image"
-                          layout="responsive"
-                          width={272}
-                          height={236}
-                        />
+                        <div className="relative aspect-[302/262]">
+                          <Image
+                            src={img}
+                            alt="house_image"
+                            fill={true}
+                            className="object-cover"
+                          />
+                        </div>
                       </SwiperSlide>
                     </>
                   )
                 })}
               </Swiper>
-              <div onClick={handleFavToggle} className="cursor-pointer max-[426px]:w-[24px] max-[426px]:h-[24px] w-[30px] h-[30px] flex items-center justify-center absolute bg-[rgba(246,246,246,0.62)] z-[10] rounded-full top-[13px] right-[11px]">
+              <div onClick={handleFavToggle} className="cursor-pointer max-[431px]:w-[24px] max-[431px]:h-[24px] w-[30px] h-[30px] flex items-center justify-center absolute bg-[rgba(246,246,246,0.62)] z-[10] rounded-full top-[13px] right-[11px]">
                 <LuHeart
                   className={`${isFavorite ? "fill-red-500 text-red-500" : "fill-transparent"
-                    } text-[20px] max-[426px]:text-[16px]`}
+                    } text-[20px] max-[431px]:text-[16px]`}
                 />
               </div>
-              <div onClick={(e) => e.preventDefault()} className="z-1 icons top-[12px] left-[8px] absolute flex flex-col max-[426px]:flex-row gap-[9px]">
+              <div onClick={(e) => e.preventDefault()} className="z-1 icons top-[12px] left-[8px] absolute flex flex-col max-[431px]:flex-row gap-[9px]">
                 <HoverLabel iconSrc={PaintIcon} label="Təmirli" bgColor={"#FFC700"} />
                 <HoverLabel iconSrc={ClipboardIcon} label="Çıxarış" bgColor={"#5DAA7E"} />
               </div>

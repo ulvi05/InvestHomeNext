@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   const isTablet = useMediaQuery('(max-width: 768px)');
-  const isMobile = useMediaQuery('(max-width: 425px)');
+  const isMobile = useMediaQuery('(max-width: 430px)');
 
 
   const navLinks = [
@@ -32,11 +32,11 @@ const Header = () => {
     <>
       <HamMenu state={isOpen} setState={setOpen} />
       <section className="sticky z-998 top-0 bg-white">
-        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
+        <div className="max-w-[1600px] w-auto mx-auto px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px]">
           <div className="flex justify-between items-center py-[10px]">
-            <div className="max-[426px]:w-[100%] h-full flex max-[930px]:justify-between justify-center items-center max-[1020px]:gap-[8px] gap-[34px]">
+            <div className="max-[431px]:w-[100%] h-full flex max-[930px]:justify-between justify-center items-center max-[1020px]:gap-[8px] gap-[34px]">
               <Link className="" href="/">
-                <div className="w-auto h-full flex justify-center items-center gap-[15px] max-[426px]:gap-[7px]">
+                <div className="w-auto h-full flex justify-center items-center gap-[15px] max-[431px]:gap-[7px]">
                   {isMobile ?
                     <Image
                       src={"/images/logo.png"}
@@ -67,7 +67,7 @@ const Header = () => {
                         className="flex-shrink-0"
                       />
                   }
-                  <p className="main-logo-style max-[1270px]:hidden max-[1130px]:block max-[580px]:hidden max-[426px]:block max-[426px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
+                  <p className="main-logo-style max-[1270px]:hidden max-[1130px]:block max-[580px]:hidden max-[431px]:block max-[431px]:text-[16px] text-[20px] font-semibold text-xl whitespace-nowrap">
                     INVEST <span className="text-[var(--primary-color)]">HOME</span>
                   </p>
                 </div>
@@ -87,7 +87,7 @@ const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[426px]:flex items-center justify-center">
+              <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[431px]:flex items-center justify-center">
                 <Image
                   src={"/icons/hamburger-menu.svg"}
                   alt="ham-menu"
@@ -97,7 +97,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="max-[426px]:hidden flex gap-[24px] items-center">
+            <div className="max-[431px]:hidden flex gap-[24px] items-center">
               <div className="heart-icon cursor-pointer">
                 <svg
                   className=""
@@ -149,12 +149,12 @@ const Header = () => {
               </Link>
               <button className="flex-shrink-0 py-[12px] max-[1440px]:px-[12px] px-[26px] rounded-[50px] bg-[#FF9D14] text-white flex justify-center items-center gap-[20px] max-[769px]:gap-[12px] cursor-pointer">
                 <div className="plus-icon relative h-[20px] w-[20px]">
-                  <i className="fa-regular fa-circle text-[20px]"></i>
+                  <i className="fa-regular fa-circle text-[20px]" aria-hidden={true}></i>
                   <i className="fa-solid fa-plus absolute top-[50%] left-[50%] translate-[-50%]"></i>
                 </div>
                 <span className="text-[16px] font-[500]">Elan ver</span>
               </button>
-              <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[426px]:hidden max-[1130px]:flex items-center justify-center">
+              <div onClick={() => { setOpen(true) }} className="w-[24px] h-[24px] hidden max-[431px]:hidden max-[1130px]:flex items-center justify-center">
                 <i className="text-[24px] fa-solid fa-bars"></i>
               </div>
             </div>

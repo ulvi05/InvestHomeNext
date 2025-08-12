@@ -19,8 +19,8 @@ const InfoDiv = ({ icon, header, text }) => {
 const WhoAreWe = () => {
   return (
     <>
-      <section className="mt-[140px] max-[426px]:hidden max-w-[1600px] mx-auto">
-        <div className="px-[80px] max-[1025px]:px-[20px] max-[426px]:px-[16px]">
+      <section className="mt-[140px] max-[431px]:hidden max-w-[1600px] mx-auto">
+        <div className="px-[80px] max-[1025px]:px-[20px] max-[431px]:px-[16px]">
           <div>
             <span className="text-primary text-[20px] font-[400] leading-[24px]">
               BİZ KİMİK ?
